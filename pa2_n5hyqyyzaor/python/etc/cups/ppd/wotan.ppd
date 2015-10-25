@@ -1,0 +1,467 @@
+*PPD-Adobe: "4.3"
+*%PPD file for CUPS/Gimp-Print.
+*%Copyright 1993-2001 by Easy Software Products, All Rights Reserved.
+*%This PPD file may be freely used and distributed under the terms of
+*%the GNU GPL.
+*FormatVersion:	"4.3"
+*FileVersion:	"4.2.5"
+*LanguageVersion: English
+*LanguageEncoding: ISOLatin1
+*PCFileName:	"pcl-4v.ppd"
+*Manufacturer:	"HP"
+*Product:	"(Gimp-Print v4.2.5)"
+*ModelName:     "pcl-4v"
+*ShortNickName: "HP LaserJet 4V, 4Si"
+*NickName:      "HP LaserJet 4V, 4Si, CUPS+Gimp-Print v4.2.5"
+*PSVersion:	"(2017.000) 705"
+*LanguageLevel:	"2"
+*ColorDevice:	False
+*DefaultColorSpace: Gray
+*FileSystem:	False
+*LandscapeOrientation: Plus90
+*TTRasterizer:	Type42
+*cupsVersion:	1.1
+*cupsModelNumber: "5"
+*cupsManualCopies: True
+*cupsFilter:	"application/vnd.cups-raster 100 rastertoprinter"
+
+*VariablePaperSize: false
+
+*OpenUI *PageSize: PickOne
+*OrderDependency: 10 AnySetup *PageSize
+*DefaultPageSize: Letter
+*PageSize Letter/Letter:	"<</PageSize[612 792]/ImagingBBox null>>setpagedevice"
+*PageSize Legal/Legal:	"<</PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+*PageSize Tabloid/Tabloid:	"<</PageSize[792 1224]/ImagingBBox null>>setpagedevice"
+*PageSize Executive/Executive:	"<</PageSize[522 756]/ImagingBBox null>>setpagedevice"
+*PageSize w288h432/4x6:	"<</PageSize[288 432]/ImagingBBox null>>setpagedevice"
+*PageSize w360h576/5x8:	"<</PageSize[360 576]/ImagingBBox null>>setpagedevice"
+*PageSize Statement/Manual:	"<</PageSize[396 612]/ImagingBBox null>>setpagedevice"
+*PageSize A3/A3:	"<</PageSize[842 1191]/ImagingBBox null>>setpagedevice"
+*PageSize A4/A4:	"<</PageSize[595 842]/ImagingBBox null>>setpagedevice"
+*PageSize A5/A5:	"<</PageSize[420 595]/ImagingBBox null>>setpagedevice"
+*PageSize B4/B4 JIS:	"<</PageSize[727 1029]/ImagingBBox null>>setpagedevice"
+*PageSize B5/B5 JIS:	"<</PageSize[518 727]/ImagingBBox null>>setpagedevice"
+*PageSize C5/C5:	"<</PageSize[459 649]/ImagingBBox null>>setpagedevice"
+*PageSize C6/C6:	"<</PageSize[323 459]/ImagingBBox null>>setpagedevice"
+*PageSize DL/DL:	"<</PageSize[311 623]/ImagingBBox null>>setpagedevice"
+*PageSize COM10/Commercial 10:	"<</PageSize[297 684]/ImagingBBox null>>setpagedevice"
+*PageSize Monarch/Monarch Envelope:	"<</PageSize[279 540]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 10 AnySetup *PageRegion
+*DefaultPageRegion: Letter
+*PageRegion Letter/Letter:	"<</PageSize[612 792]/ImagingBBox null>>setpagedevice"
+*PageRegion Legal/Legal:	"<</PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+*PageRegion Tabloid/Tabloid:	"<</PageSize[792 1224]/ImagingBBox null>>setpagedevice"
+*PageRegion Executive/Executive:	"<</PageSize[522 756]/ImagingBBox null>>setpagedevice"
+*PageRegion w288h432/4x6:	"<</PageSize[288 432]/ImagingBBox null>>setpagedevice"
+*PageRegion w360h576/5x8:	"<</PageSize[360 576]/ImagingBBox null>>setpagedevice"
+*PageRegion Statement/Manual:	"<</PageSize[396 612]/ImagingBBox null>>setpagedevice"
+*PageRegion A3/A3:	"<</PageSize[842 1191]/ImagingBBox null>>setpagedevice"
+*PageRegion A4/A4:	"<</PageSize[595 842]/ImagingBBox null>>setpagedevice"
+*PageRegion A5/A5:	"<</PageSize[420 595]/ImagingBBox null>>setpagedevice"
+*PageRegion B4/B4 JIS:	"<</PageSize[727 1029]/ImagingBBox null>>setpagedevice"
+*PageRegion B5/B5 JIS:	"<</PageSize[518 727]/ImagingBBox null>>setpagedevice"
+*PageRegion C5/C5:	"<</PageSize[459 649]/ImagingBBox null>>setpagedevice"
+*PageRegion C6/C6:	"<</PageSize[323 459]/ImagingBBox null>>setpagedevice"
+*PageRegion DL/DL:	"<</PageSize[311 623]/ImagingBBox null>>setpagedevice"
+*PageRegion COM10/Commercial 10:	"<</PageSize[297 684]/ImagingBBox null>>setpagedevice"
+*PageRegion Monarch/Monarch Envelope:	"<</PageSize[279 540]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageRegion
+
+*DefaultImageableArea: Letter
+*ImageableArea Letter/Letter:	"18 12 594 780"
+*ImageableArea Legal/Legal:	"18 12 594 996"
+*ImageableArea Tabloid/Tabloid:	"18 12 774 1212"
+*ImageableArea Executive/Executive:	"18 12 504 744"
+*ImageableArea w288h432/4x6:	"18 12 270 420"
+*ImageableArea w360h576/5x8:	"18 12 342 564"
+*ImageableArea Statement/Manual:	"18 12 378 600"
+*ImageableArea A3/A3:	"18 12 824 1179"
+*ImageableArea A4/A4:	"10 12 585 830"
+*ImageableArea A5/A5:	"18 12 402 583"
+*ImageableArea B4/B4 JIS:	"18 12 709 1017"
+*ImageableArea B5/B5 JIS:	"18 12 500 715"
+*ImageableArea C5/C5:	"18 12 441 637"
+*ImageableArea C6/C6:	"18 12 305 447"
+*ImageableArea DL/DL:	"18 12 293 611"
+*ImageableArea COM10/Commercial 10:	"18 12 279 672"
+*ImageableArea Monarch/Monarch Envelope:	"18 12 261 528"
+
+*DefaultPaperDimension: Letter
+*PaperDimension Letter/Letter:	"612 792"
+*PaperDimension Legal/Legal:	"612 1008"
+*PaperDimension Tabloid/Tabloid:	"792 1224"
+*PaperDimension Executive/Executive:	"522 756"
+*PaperDimension w288h432/4x6:	"288 432"
+*PaperDimension w360h576/5x8:	"360 576"
+*PaperDimension Statement/Manual:	"396 612"
+*PaperDimension A3/A3:	"842 1191"
+*PaperDimension A4/A4:	"595 842"
+*PaperDimension A5/A5:	"420 595"
+*PaperDimension B4/B4 JIS:	"727 1029"
+*PaperDimension B5/B5 JIS:	"518 727"
+*PaperDimension C5/C5:	"459 649"
+*PaperDimension C6/C6:	"323 459"
+*PaperDimension DL/DL:	"311 623"
+*PaperDimension COM10/Commercial 10:	"297 684"
+*PaperDimension Monarch/Monarch Envelope:	"279 540"
+
+*OpenGroup: MAIN/Basic settings
+*OpenUI *InputSlot/Media Source: PickOne
+*OrderDependency: 10 AnySetup *InputSlot
+*DefaultInputSlot: Standard
+*InputSlot Standard/Standard:	"<</MediaClass(Standard)>>setpagedevice"
+*InputSlot Manual/Manual:	"<</MediaClass(Manual)>>setpagedevice"
+*InputSlot MultiPurpose/Tray 1:	"<</MediaClass(MultiPurpose)>>setpagedevice"
+*InputSlot Upper/Tray 2:	"<</MediaClass(Upper)>>setpagedevice"
+*InputSlot Lower/Tray 3:	"<</MediaClass(Lower)>>setpagedevice"
+*InputSlot LargeCapacity/Tray 4:	"<</MediaClass(LargeCapacity)>>setpagedevice"
+*CloseUI: *InputSlot
+
+*OpenUI *Resolution/Resolution: PickOne
+*OrderDependency: 20 AnySetup *Resolution
+*DefaultResolution: 300dpi
+*Resolution 150dpi/150x150 DPI:	"<</HWResolution[150 150]/cupsCompression 0>>setpagedevice"
+*Resolution 300dpi/300x300 DPI:	"<</HWResolution[300 300]/cupsCompression 1>>setpagedevice"
+*Resolution 600dpi/600x600 DPI:	"<</HWResolution[600 600]/cupsCompression 2>>setpagedevice"
+*CloseUI: *Resolution
+
+*OpenUI *stpImageType/Image Type: PickOne
+*OrderDependency: 10 AnySetup *stpImageType
+*DefaultstpImageType: LineArt
+*stpImageType LineArt/Line Art:	"<</cupsRowCount 0>>setpagedevice"
+*stpImageType SolidTone/Solid Colors:	"<</cupsRowCount 1>>setpagedevice"
+*stpImageType Continuous/Photograph:	"<</cupsRowCount 2>>setpagedevice"
+*CloseUI: *stpImageType
+
+*OpenUI *stpDither/Dither Algorithm: PickOne
+*OrderDependency: 10 AnySetup *stpDither
+*DefaultstpDither: Adaptive
+*stpDither Adaptive/Adaptive Hybrid: "<</cupsRowStep 0>>setpagedevice"
+*stpDither Ordered/Ordered: "<</cupsRowStep 1>>setpagedevice"
+*stpDither Fast/Fast: "<</cupsRowStep 2>>setpagedevice"
+*stpDither VeryFast/Very Fast: "<</cupsRowStep 3>>setpagedevice"
+*stpDither Floyd/Hybrid Floyd-Steinberg: "<</cupsRowStep 4>>setpagedevice"
+*stpDither EvenTone/EvenTone: "<</cupsRowStep 5>>setpagedevice"
+*CloseUI: *stpDither
+
+*CloseGroup: MAIN
+
+*OpenGroup: STP/Expert settings
+*OpenUI *ColorModel: PickOne
+*OrderDependency: 20 AnySetup *ColorModel
+*DefaultColorModel: Gray
+*ColorModel Gray/Grayscale:	"<</cupsColorSpace 0/cupsColorOrder 0/cupsBitsPerColor 8>>setpagedevice"
+*ColorModel Black/Black & White:	"<</cupsColorSpace 3/cupsColorOrder 0/cupsBitsPerColor 8>>setpagedevice"
+*CloseUI: *ColorModel
+
+*OpenUI *stpBrightness/Brightness: PickOne
+*DefaultstpBrightness: 1000
+*stpBrightness 0/0.000: ""
+*stpBrightness 50/0.050: ""
+*stpBrightness 100/0.100: ""
+*stpBrightness 150/0.150: ""
+*stpBrightness 200/0.200: ""
+*stpBrightness 250/0.250: ""
+*stpBrightness 300/0.300: ""
+*stpBrightness 350/0.350: ""
+*stpBrightness 400/0.400: ""
+*stpBrightness 450/0.450: ""
+*stpBrightness 500/0.500: ""
+*stpBrightness 550/0.550: ""
+*stpBrightness 600/0.600: ""
+*stpBrightness 650/0.650: ""
+*stpBrightness 700/0.700: ""
+*stpBrightness 750/0.750: ""
+*stpBrightness 800/0.800: ""
+*stpBrightness 850/0.850: ""
+*stpBrightness 900/0.900: ""
+*stpBrightness 950/0.950: ""
+*stpBrightness 1000/1.000: ""
+*stpBrightness 1050/1.050: ""
+*stpBrightness 1100/1.100: ""
+*stpBrightness 1150/1.150: ""
+*stpBrightness 1200/1.200: ""
+*stpBrightness 1250/1.250: ""
+*stpBrightness 1300/1.300: ""
+*stpBrightness 1350/1.350: ""
+*stpBrightness 1400/1.400: ""
+*stpBrightness 1450/1.450: ""
+*stpBrightness 1500/1.500: ""
+*stpBrightness 1550/1.550: ""
+*stpBrightness 1600/1.600: ""
+*stpBrightness 1650/1.650: ""
+*stpBrightness 1700/1.700: ""
+*stpBrightness 1750/1.750: ""
+*stpBrightness 1800/1.800: ""
+*stpBrightness 1850/1.850: ""
+*stpBrightness 1900/1.900: ""
+*stpBrightness 1950/1.950: ""
+*stpBrightness 2000/2.000: ""
+*CloseUI: *stpBrightness
+
+*OpenUI *stpContrast/Contrast: PickOne
+*DefaultstpContrast: 1000
+*stpContrast 0/0.000: ""
+*stpContrast 50/0.050: ""
+*stpContrast 100/0.100: ""
+*stpContrast 150/0.150: ""
+*stpContrast 200/0.200: ""
+*stpContrast 250/0.250: ""
+*stpContrast 300/0.300: ""
+*stpContrast 350/0.350: ""
+*stpContrast 400/0.400: ""
+*stpContrast 450/0.450: ""
+*stpContrast 500/0.500: ""
+*stpContrast 550/0.550: ""
+*stpContrast 600/0.600: ""
+*stpContrast 650/0.650: ""
+*stpContrast 700/0.700: ""
+*stpContrast 750/0.750: ""
+*stpContrast 800/0.800: ""
+*stpContrast 850/0.850: ""
+*stpContrast 900/0.900: ""
+*stpContrast 950/0.950: ""
+*stpContrast 1000/1.000: ""
+*stpContrast 1050/1.050: ""
+*stpContrast 1100/1.100: ""
+*stpContrast 1150/1.150: ""
+*stpContrast 1200/1.200: ""
+*stpContrast 1250/1.250: ""
+*stpContrast 1300/1.300: ""
+*stpContrast 1350/1.350: ""
+*stpContrast 1400/1.400: ""
+*stpContrast 1450/1.450: ""
+*stpContrast 1500/1.500: ""
+*stpContrast 1550/1.550: ""
+*stpContrast 1600/1.600: ""
+*stpContrast 1650/1.650: ""
+*stpContrast 1700/1.700: ""
+*stpContrast 1750/1.750: ""
+*stpContrast 1800/1.800: ""
+*stpContrast 1850/1.850: ""
+*stpContrast 1900/1.900: ""
+*stpContrast 1950/1.950: ""
+*stpContrast 2000/2.000: ""
+*stpContrast 2050/2.050: ""
+*stpContrast 2100/2.100: ""
+*stpContrast 2150/2.150: ""
+*stpContrast 2200/2.200: ""
+*stpContrast 2250/2.250: ""
+*stpContrast 2300/2.300: ""
+*stpContrast 2350/2.350: ""
+*stpContrast 2400/2.400: ""
+*stpContrast 2450/2.450: ""
+*stpContrast 2500/2.500: ""
+*stpContrast 2550/2.550: ""
+*stpContrast 2600/2.600: ""
+*stpContrast 2650/2.650: ""
+*stpContrast 2700/2.700: ""
+*stpContrast 2750/2.750: ""
+*stpContrast 2800/2.800: ""
+*stpContrast 2850/2.850: ""
+*stpContrast 2900/2.900: ""
+*stpContrast 2950/2.950: ""
+*stpContrast 3000/3.000: ""
+*stpContrast 3050/3.050: ""
+*stpContrast 3100/3.100: ""
+*stpContrast 3150/3.150: ""
+*stpContrast 3200/3.200: ""
+*stpContrast 3250/3.250: ""
+*stpContrast 3300/3.300: ""
+*stpContrast 3350/3.350: ""
+*stpContrast 3400/3.400: ""
+*stpContrast 3450/3.450: ""
+*stpContrast 3500/3.500: ""
+*stpContrast 3550/3.550: ""
+*stpContrast 3600/3.600: ""
+*stpContrast 3650/3.650: ""
+*stpContrast 3700/3.700: ""
+*stpContrast 3750/3.750: ""
+*stpContrast 3800/3.800: ""
+*stpContrast 3850/3.850: ""
+*stpContrast 3900/3.900: ""
+*stpContrast 3950/3.950: ""
+*stpContrast 4000/4.000: ""
+*CloseUI: *stpContrast
+
+*OpenUI *stpGamma/Gamma: PickOne
+*DefaultstpGamma: 1000
+*stpGamma 100/0.100: ""
+*stpGamma 150/0.150: ""
+*stpGamma 200/0.200: ""
+*stpGamma 250/0.250: ""
+*stpGamma 300/0.300: ""
+*stpGamma 350/0.350: ""
+*stpGamma 400/0.400: ""
+*stpGamma 450/0.450: ""
+*stpGamma 500/0.500: ""
+*stpGamma 550/0.550: ""
+*stpGamma 600/0.600: ""
+*stpGamma 650/0.650: ""
+*stpGamma 700/0.700: ""
+*stpGamma 750/0.750: ""
+*stpGamma 800/0.800: ""
+*stpGamma 850/0.850: ""
+*stpGamma 900/0.900: ""
+*stpGamma 950/0.950: ""
+*stpGamma 1000/1.000: ""
+*stpGamma 1050/1.050: ""
+*stpGamma 1100/1.100: ""
+*stpGamma 1150/1.150: ""
+*stpGamma 1200/1.200: ""
+*stpGamma 1250/1.250: ""
+*stpGamma 1300/1.300: ""
+*stpGamma 1350/1.350: ""
+*stpGamma 1400/1.400: ""
+*stpGamma 1450/1.450: ""
+*stpGamma 1500/1.500: ""
+*stpGamma 1550/1.550: ""
+*stpGamma 1600/1.600: ""
+*stpGamma 1650/1.650: ""
+*stpGamma 1700/1.700: ""
+*stpGamma 1750/1.750: ""
+*stpGamma 1800/1.800: ""
+*stpGamma 1850/1.850: ""
+*stpGamma 1900/1.900: ""
+*stpGamma 1950/1.950: ""
+*stpGamma 2000/2.000: ""
+*stpGamma 2050/2.050: ""
+*stpGamma 2100/2.100: ""
+*stpGamma 2150/2.150: ""
+*stpGamma 2200/2.200: ""
+*stpGamma 2250/2.250: ""
+*stpGamma 2300/2.300: ""
+*stpGamma 2350/2.350: ""
+*stpGamma 2400/2.400: ""
+*stpGamma 2450/2.450: ""
+*stpGamma 2500/2.500: ""
+*stpGamma 2550/2.550: ""
+*stpGamma 2600/2.600: ""
+*stpGamma 2650/2.650: ""
+*stpGamma 2700/2.700: ""
+*stpGamma 2750/2.750: ""
+*stpGamma 2800/2.800: ""
+*stpGamma 2850/2.850: ""
+*stpGamma 2900/2.900: ""
+*stpGamma 2950/2.950: ""
+*stpGamma 3000/3.000: ""
+*stpGamma 3050/3.050: ""
+*stpGamma 3100/3.100: ""
+*stpGamma 3150/3.150: ""
+*stpGamma 3200/3.200: ""
+*stpGamma 3250/3.250: ""
+*stpGamma 3300/3.300: ""
+*stpGamma 3350/3.350: ""
+*stpGamma 3400/3.400: ""
+*stpGamma 3450/3.450: ""
+*stpGamma 3500/3.500: ""
+*stpGamma 3550/3.550: ""
+*stpGamma 3600/3.600: ""
+*stpGamma 3650/3.650: ""
+*stpGamma 3700/3.700: ""
+*stpGamma 3750/3.750: ""
+*stpGamma 3800/3.800: ""
+*stpGamma 3850/3.850: ""
+*stpGamma 3900/3.900: ""
+*stpGamma 3950/3.950: ""
+*stpGamma 4000/4.000: ""
+*CloseUI: *stpGamma
+
+*OpenUI *stpDensity/Density: PickOne
+*DefaultstpDensity: 1000
+*stpDensity 100/0.100: ""
+*stpDensity 150/0.150: ""
+*stpDensity 200/0.200: ""
+*stpDensity 250/0.250: ""
+*stpDensity 300/0.300: ""
+*stpDensity 350/0.350: ""
+*stpDensity 400/0.400: ""
+*stpDensity 450/0.450: ""
+*stpDensity 500/0.500: ""
+*stpDensity 550/0.550: ""
+*stpDensity 600/0.600: ""
+*stpDensity 650/0.650: ""
+*stpDensity 700/0.700: ""
+*stpDensity 750/0.750: ""
+*stpDensity 800/0.800: ""
+*stpDensity 850/0.850: ""
+*stpDensity 900/0.900: ""
+*stpDensity 950/0.950: ""
+*stpDensity 1000/1.000: ""
+*stpDensity 1050/1.050: ""
+*stpDensity 1100/1.100: ""
+*stpDensity 1150/1.150: ""
+*stpDensity 1200/1.200: ""
+*stpDensity 1250/1.250: ""
+*stpDensity 1300/1.300: ""
+*stpDensity 1350/1.350: ""
+*stpDensity 1400/1.400: ""
+*stpDensity 1450/1.450: ""
+*stpDensity 1500/1.500: ""
+*stpDensity 1550/1.550: ""
+*stpDensity 1600/1.600: ""
+*stpDensity 1650/1.650: ""
+*stpDensity 1700/1.700: ""
+*stpDensity 1750/1.750: ""
+*stpDensity 1800/1.800: ""
+*stpDensity 1850/1.850: ""
+*stpDensity 1900/1.900: ""
+*stpDensity 1950/1.950: ""
+*stpDensity 2000/2.000: ""
+*CloseUI: *stpDensity
+
+*CloseGroup: STP
+
+*DefaultFont: Courier
+*Font AvantGarde-Book: Standard "(001.006S)" Standard ROM
+*Font AvantGarde-BookOblique: Standard "(001.006S)" Standard ROM
+*Font AvantGarde-Demi: Standard "(001.007S)" Standard ROM
+*Font AvantGarde-DemiOblique: Standard "(001.007S)" Standard ROM
+*Font Bookman-Demi: Standard "(001.004S)" Standard ROM
+*Font Bookman-DemiItalic: Standard "(001.004S)" Standard ROM
+*Font Bookman-Light: Standard "(001.004S)" Standard ROM
+*Font Bookman-LightItalic: Standard "(001.004S)" Standard ROM
+*Font Courier: Standard "(002.004S)" Standard ROM
+*Font Courier-Bold: Standard "(002.004S)" Standard ROM
+*Font Courier-BoldOblique: Standard "(002.004S)" Standard ROM
+*Font Courier-Oblique: Standard "(002.004S)" Standard ROM
+*Font Helvetica: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Bold: Standard "(001.007S)" Standard ROM
+*Font Helvetica-BoldOblique: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Narrow-Bold: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow-BoldOblique: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow-Oblique: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Oblique: Standard "(001.006S)" Standard ROM
+*Font NewCenturySchlbk-Bold: Standard "(001.009S)" Standard ROM
+*Font NewCenturySchlbk-BoldItalic: Standard "(001.007S)" Standard ROM
+*Font NewCenturySchlbk-Italic: Standard "(001.006S)" Standard ROM
+*Font NewCenturySchlbk-Roman: Standard "(001.007S)" Standard ROM
+*Font Palatino-Bold: Standard "(001.005S)" Standard ROM
+*Font Palatino-BoldItalic: Standard "(001.005S)" Standard ROM
+*Font Palatino-Italic: Standard "(001.005S)" Standard ROM
+*Font Palatino-Roman: Standard "(001.005S)" Standard ROM
+*Font Symbol: Special "(001.007S)" Special ROM
+*Font Times-Bold: Standard "(001.007S)" Standard ROM
+*Font Times-BoldItalic: Standard "(001.009S)" Standard ROM
+*Font Times-Italic: Standard "(001.007S)" Standard ROM
+*Font Times-Roman: Standard "(001.007S)" Standard ROM
+*Font ZapfChancery-MediumItalic: Standard "(001.007S)" Standard ROM
+*Font ZapfDingbats: Special "(001.004S)" Standard ROM
+
+*%End of pcl-4v.ppd
+
+*%APLANNOTATE START
+*%XML: <?xml version="1.0" encoding="UTF-8"?>
+*%XML: <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+*%XML: <plist version="1.0">
+*%XML: <dict>
+*%XML: 	<key>OriginalPPD</key>
+*%XML: 	<string>file://localhost/usr/share/cups/model/C/pcl-4v.ppd.gz</string>
+*%XML: </dict>
+*%XML: </plist>
+*%APLANNOTATE END

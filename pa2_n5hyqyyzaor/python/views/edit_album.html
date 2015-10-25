@@ -1,0 +1,142 @@
+{% extends "logged_in_base.html" %}
+{% block content %}
+    <h1 align="center">{{albumTitle}}</h1>
+    <h4 align="center">Owned by {{albumOwner}}</h4>
+    <p class="important">
+    </p>
+   
+    {% if edit %}
+    <div>
+    <form method="post" action="/n5hyqyyzaor/pa2/album/edit?id={{id}}">
+	    <input type="hidden" name="op" value="change"/>
+    	<input type="hidden" name="id" value="{{id}}"/>
+    	<input type="hidden" name="access" value="nochange"/>
+    	<input type="text" name="newName" pattern = "^(?!\s*$).+" value="new name" />
+	    <input type="submit" name='submit' value="rename"/>
+	  </form>
+    </div>
+    <div>
+    	<form method="post" action="/n5hyqyyzaor/pa2/album/edit?id={{id}}">
+    Permissions:
+    	<input type="hidden" name="op" value="change"/>
+    	<input type="hidden" name="id" value="{{id}}"/>
+    	<input type="radio" name="access" onclick = "hide()" value = "public"/>Public
+	    <input type="radio" name="access" onclick = "show()" value = "private" checked/>Private
+
+	    
+		  
+		  <div id="user">
+		  <input list="names" name="names">
+
+  			<datalist id="names">
+	     {% for user in unallowedUsers %}
+		  <option value="{{user[0]}}">{{user[0]}}</option>
+		 
+		  {% endfor %}
+		    </datalist>
+		
+		  <input type="submit" name="submit" value="Add"/>
+	   </div>
+
+	    <input type="submit" value="Change"/>
+	    </form>
+	    <div id="user">
+	    <table style="width:100%">
+	    {% for user in allowedUsers %}
+	    <tr>
+	      <td> {{user[0]}} </td>
+	     
+	      <td>
+	      <td><form method="post" action="/n5hyqyyzaor/pa2/album/edit?id={{id}}">
+		<input type="hidden" name="op" value="change" />
+		<input type="hidden" name="id" value="{{id}}"/>
+		<input type="hidden" name="operation" value="revoke"/>
+		<input type="hidden" name="access" value="private"/>
+		<input type="hidden" name="name" value="{{user[0]}}"/>
+		<input type="submit" name="submit" value="revoke"/>
+		</form>
+	     </td>
+	     {% endfor %}
+	     </tr>
+	     <tr>
+	      
+		  
+	     </tr>
+
+
+	    <br>
+	    
+	    
+	    </table>
+	    </div>
+	  </form>
+	  <div>
+    </div>
+    <div>
+      <ul>
+	{% for pic, thum in zipped%}
+	<li> {{pic[2]}}<br>{{thum[3]}}
+      <br>
+	  <form method="post" action="/n5hyqyyzaor/pa2/album/edit?id={{pic[0]}}">
+	    <input type="hidden" name="op" value="delete"/>
+	    <input type="hidden" name="albumid" value="{{pic[0]}}"/>
+	    <input type="hidden" name="picid" value="{{pic[1]}}"/>
+	    <input type="submit" name="submit" value="Delete"/>
+	  </form>
+	  <img src="/static{{thum[1]}}" alt="pic" style="width:128px;height:128px;">
+	</li> 
+	{% endfor %}
+      </ul>
+      <form action="/n5hyqyyzaor/pa2/album/edit?id={{id}}" method="post" enctype=multipart/form-data>
+	<input type="file" name="file"/>
+	<input type="hidden" name="albumid" value="{{id}}" />
+	<input type="hidden" name="op" value="add"/>
+	<input type="submit" value="Upload"/>
+	      </form>
+    </div>
+    <form method="get" action="/n5hyqyyzaor/pa2/album?id={{id}}">
+      <input type="hidden" name="id" value="{{id}}"/>
+      <input type="submit" value="Done"/>
+                            </form>
+    {% else %}
+    <ul >
+      {% for pic, thum in zipped%}
+      <li> {{pic[2]}}<br>
+      {{thum[3]}}
+      <br>
+<A HREF="/n5hyqyyzaor/pa2/pic?id={{pic[1]}}"><img src="/static{{thum[1]}}" alt="pic" style="width:128px;height:128x;"></A>
+      </li>
+      {% endfor %}
+    </ul>
+    <table style="width:100%">
+      <tr><td>
+      {%if canEdit%}
+	  <form method="post" action="/n5hyqyyzaor/pa2/album/edit?id={{id}}">
+	    <input type="hidden" name="op" value="edit" />
+	    <input type="hidden" name="id" value="{{id}}"/>
+	    <input type="submit" name="submit" value="Edit"/>
+	  </form>
+	  {% endif %}
+	</td>
+	<td>
+	  <form method="get" action="/n5hyqyyzaor/pa2/albums?username={{user}}">
+	    <input type="hidden" name="username" value="{{user}}" />
+	    <input type="submit"  value="Albums"/>
+	  </form>
+	        </td>
+      </tr>
+      </table>
+    
+    {% endif %}
+    <script>
+function hide() {
+    document.getElementById('user').style.display = 'none';
+}
+</script>
+   
+    <script>
+function show() {
+    document.getElementById('user').style.display = 'block';
+}
+</script>
+{% endblock %}

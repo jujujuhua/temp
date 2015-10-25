@@ -1,0 +1,21 @@
+kswapd0 (37, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :    1606797591.024109
+se.vruntime                                  :       7191403.372338
+se.sum_exec_runtime                          :         15027.289566
+nr_switches                                  :                17116
+nr_voluntary_switches                        :                 8637
+nr_involuntary_switches                      :                 8479
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                  761
+se.avg.running_avg_sum                       :                  640
+se.avg.avg_period                            :                47415
+se.avg.load_avg_contrib                      :                   16
+se.avg.utilization_avg_contrib               :                   13
+se.avg.decay_count                           :           1532361595
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  151
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

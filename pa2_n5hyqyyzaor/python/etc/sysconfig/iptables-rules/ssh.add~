@@ -1,0 +1,2 @@
+# SSH inbound                                                                                                              
+iptables -A INPUT -p tcp --dport 22 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT

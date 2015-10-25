@@ -1,0 +1,13 @@
+#!/bin/sh
+cat <<GUMBO
+
+Your account has been disabled.  This step is taken as a security 
+measure for permanent accounts having no apparent access for 3 months.  
+To reactivate your account please contact Hugh Battley (4403 EECS)
+at phone (734) 763-9351 or mail hugh@eecs.umich.edu.  You may also
+mail help@eecs.umich.edu for help with this account
+
+
+
+GUMBO
+sleep 20

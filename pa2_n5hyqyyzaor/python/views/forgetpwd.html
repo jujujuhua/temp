@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+  	{% if err == 0 %}
+  		<script>
+  			alert("Username does not exist!")
+  		</script>
+  	{%endif %}
+  	{% if err == 1 %}
+  		<script>
+  			alert("Invalid Username and Password combination!")
+  		</script>
+  	{%endif %}
+  	{% if err == 2 %}
+  		<script>
+  			alert("Malformed Username or password !")
+  		</script>
+  	{%endif %}
+  </div>
+ <h1>Forgotten Password? {{err}} </h1>
+
+
+  Email Address: 
+  <form  method = "POST" action = "{{'/n5hyqyyzaor/pa2/forgetpwd'}}">
+
+  <input type="text" name="emailaddress"  >
+  <br>
+
+  Username:<br>
+  <input type="text" name="username"  >
+  <br>
+  <input type="submit"  value="email me new password"/>
+</form>
+
+{% endblock %}

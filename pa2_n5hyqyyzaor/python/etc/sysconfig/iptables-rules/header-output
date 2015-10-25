@@ -1,0 +1,4 @@
+# ALLOW OUTBOUND TCP and UDP                                                                                               
+iptables -A OUTPUT -p tcp -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A OUTPUT -p udp -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+

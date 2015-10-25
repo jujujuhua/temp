@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 align="center">PIC VIEWER</h1>
+    <p class="important">
+    <img src="/static/pictures/{{filename}}" alt="HTML5 Icon">  
+    </p>
+    <br>
+    <table align="center" style="width:100%">
+      <tr>
+	{% if prevend %}
+	<p> You have reached the begining! </p>
+	{% else %}
+	<td>
+	  <form method="get" action="/n5hyqyyzaor/pa2/pic">
+	    <input type="hidden" name="id" value="{{ppid}}"/>
+	    <input type="submit" value="Prev"/>
+	   </form>
+	</td>
+	{% endif %}
+	
+	{% if nextend %}
+	<p> You have reached the end! </p>
+
+	{% else %}
+	<td>
+	  <form method="get" action="/n5hyqyyzaor/pa2/pic">
+	    <input type="hidden" name="id" value="{{npid}}"/>
+	    <input type="submit" value="Next"/>
+	  </form>
+	</td>
+	{% endif %}
+	<td>
+	  <form method="get" action="/n5hyqyyzaor/pa2/album?id={{albid}}">
+	    <input type="hidden" name="id" value="{{albid}}" />
+	    <input type="submit" value="Album"/>
+	  </form>
+	          </td>
+	</tr>
+    </table>
+{% endblock %}

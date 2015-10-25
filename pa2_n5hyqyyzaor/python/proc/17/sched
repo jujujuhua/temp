@@ -1,0 +1,21 @@
+kworker/1:0H (17, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :          1535.359222
+se.vruntime                                  :           613.287897
+se.sum_exec_runtime                          :             0.043170
+nr_switches                                  :                    7
+nr_voluntary_switches                        :                    7
+nr_involuntary_switches                      :                    0
+se.load.weight                               :                88761
+se.avg.runnable_avg_sum                      :                   28
+se.avg.running_avg_sum                       :                   28
+se.avg.avg_period                            :                48703
+se.avg.load_avg_contrib                      :                   30
+se.avg.utilization_avg_contrib               :                    0
+se.avg.decay_count                           :                 1465
+policy                                       :                    0
+prio                                         :                  100
+clock-delta                                  :                  156
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

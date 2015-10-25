@@ -1,0 +1,22 @@
+rsyslogd (480, #threads: 3)
+-------------------------------------------------------------------
+se.exec_start                                :    1607536800.057036
+se.vruntime                                  :      18082069.754005
+se.sum_exec_runtime                          :            55.860521
+nr_switches                                  :                 2708
+nr_voluntary_switches                        :                 2707
+nr_involuntary_switches                      :                    1
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                   48
+se.avg.running_avg_sum                       :                   16
+se.avg.avg_period                            :                48811
+se.avg.load_avg_contrib                      :                    0
+se.avg.utilization_avg_contrib               :                    0
+se.avg.decay_count                           :           1533066559
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  150
+mm->numa_scan_seq                            :                    0
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

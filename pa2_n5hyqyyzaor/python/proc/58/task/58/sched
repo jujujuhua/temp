@@ -1,0 +1,21 @@
+scsi_tmf_3 (58, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :           744.649344
+se.vruntime                                  :           128.061895
+se.sum_exec_runtime                          :             0.011941
+nr_switches                                  :                    2
+nr_voluntary_switches                        :                    2
+nr_involuntary_switches                      :                    0
+se.load.weight                               :                88761
+se.avg.runnable_avg_sum                      :                12585
+se.avg.running_avg_sum                       :                11475
+se.avg.avg_period                            :                12593
+se.avg.load_avg_contrib                      :                 1023
+se.avg.utilization_avg_contrib               :                  933
+se.avg.decay_count                           :                  711
+policy                                       :                    0
+prio                                         :                  100
+clock-delta                                  :                  155
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

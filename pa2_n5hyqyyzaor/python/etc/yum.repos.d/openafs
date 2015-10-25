@@ -1,0 +1,11 @@
+[openafs]
+name=OpenAFS 1.6.1 for RHEl 5 - $basearch
+baseurl=http://dl.openafs.org/dl/openafs/1.6.1/rhel5/$basearch/
+enabled=1
+gpgcheck=0
+
+[openafs-source]
+name=OpenAFS 1.6.1 for RHEL 5 - Source
+baseurl=http://dl.openafs.org/dl/openafs/1.6.1/
+enabled=0
+gpgcheck=0

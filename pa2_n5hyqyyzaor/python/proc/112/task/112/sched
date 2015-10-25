@@ -1,0 +1,21 @@
+kauditd (112, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :    1607830905.758775
+se.vruntime                                  :       7563229.871519
+se.sum_exec_runtime                          :          8213.511538
+nr_switches                                  :               617800
+nr_voluntary_switches                        :               617654
+nr_involuntary_switches                      :                  146
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                  385
+se.avg.running_avg_sum                       :                   49
+se.avg.avg_period                            :                47173
+se.avg.load_avg_contrib                      :                    7
+se.avg.utilization_avg_contrib               :                    0
+se.avg.decay_count                           :           1533347040
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  150
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

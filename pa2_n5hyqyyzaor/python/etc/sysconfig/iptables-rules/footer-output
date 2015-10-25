@@ -1,0 +1,12 @@
+# Log and drop all others                                                                                                 
+
+# ALLOW OUTBOUND TCP, UDP, ICMP
+iptables -A OUTPUT -p tcp -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A OUTPUT -p udp -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A OUTPUT -p icmp -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+
+ 
+iptables -A OUTPUT -p all -j LOG --log-level=INFO --log-prefix="Dropped OUTPUT packets: "
+iptables -A OUTPUT -p all -j DROP
+
+

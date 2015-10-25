@@ -1,0 +1,163 @@
+#!/usr/bin/python
+
+# nagios disk check plugin
+# enhanced for eecs.umich.edu environment
+# Version 1.0 - 2009-11-26 - don@umich.edu
+
+import os,sys,re
+
+# can override default thresholds, override file format:
+# mount-point freespace-absolute
+# mount-point freespace%
+override = '/etc/nagios/freespace'
+
+statusnames = ['OK', 'WARNING', 'CRITICAL']
+# status gets updated with |= 
+# |= 1 raises a WARNING, |= 2 raises a CRITICAL
+status = 0
+
+# Class to hold data for one filesystem
+class fsdata:
+  def __init__(self, fsname):
+    self.mount = fsname
+    # Default / sentinel values
+    self.ifree   = 999999999
+    self.avail   = 999999999
+    self.ifpct   = 100
+    self.bfpct   = 100
+    self.wifree  = -1
+    self.cifree  = -1
+    self.wipct   = 40  # warn if free inodes < 40% (default)
+    self.cipct   = 20  # critical if < 20%
+    self.wbfree  = -1
+    self.cbfree  = -1
+    self.wbpct   = 20  # warn if free blocks < 20% (default)
+    self.cbpct   = 10  # critical if < 10%
+    self.sortkey = 9999
+
+fs = {}
+
+# Get a filesystem record
+def getfs(fsname):
+  # Make a class instance if one does not already exist
+  if fsname not in fs:
+    fs[fsname] = fsdata(fsname)
+  return fs[fsname]
+
+# Sorting priorities for display are set in do_inode and do_data
+# idea is to get most serious problems filesystems to show first
+# inode problems are treated as more serious that data problems
+
+# Process an inode line from df
+def do_inode(f, free, pct):
+  global status
+  f.ifree     = free
+  f.ifpct = pct
+  if f.ifpct <= f.wipct:
+    status |= 1
+    f.sortkey = 6999 + f.ifpct - f.wipct
+  if f.ifree <= f.wifree:
+    status |= 1
+    f.sortkey = 5000
+  if f.ifpct <= f.cipct:
+    status |= 2
+    f.sortkey = 2999 + f.ifpct - f.cipct
+  if f.ifree <= f.cifree:
+    status |= 2
+
+# Process a data line from df
+def do_data(f, free, pct):
+  global status
+  f.avail     = free
+  f.bfpct = pct
+  f.sortkey =  9000 + f.bfpct
+  if f.bfpct <= f.wbpct:
+    status |= 1
+    f.sortkey = 8999 + f.bfpct - f.wbpct
+  if f.avail <= f.wbfree:
+    status |= 1
+    f.sortkey = 7000
+  if f.bfpct <= f.cbpct:
+    status |= 2
+    f.sortkey = 4999 + f.bfpct - f.cbpct
+  if f.avail <= f.cbfree:
+    status |= 2
+    f.sortkey = 3000
+
+def parsepipe(cmd, handler):
+  r = ''
+  for d in os.popen(cmd, 'r').readlines():
+    # Need to deal with df output split across two lines,
+    # common with very long device names from LVM
+    if ' ' not in d:
+      r = d[:-1]
+    else:
+      r += d
+      if r[:5] == '/dev/':
+        f = r.split()
+        fc = getfs(f[5])
+        fc.dev = f[0]
+        try:
+          handler(fc, int(f[3]), 100 - int(f[4].replace('%','')))
+        except:
+          pass
+      r = ''
+
+# Turn kilobytes into larger SI units to stay within 5 digits
+def kdisplay(kb):
+  ui = 0
+  while kb > 99999:
+    kb /= 1024
+    ui += 1
+  return "%d %sB" % (kb, ('kMGTPEZY')[ui])
+
+# Read warning override, assume critical free
+# space limit is half of warning free space
+try:
+  for over in file(override).readlines():
+    sover = re.sub('#.*', '', over).strip()
+    if sover:
+      f = sover.split()
+      fc = getfs(f[0])
+      if f[1][-1] == '%':
+        # New percentage limit
+        fc.wbpct = int(f[1][:-1])
+        fc.cbpct = (fc.wbpct + 1) / 2
+      else:
+        # New absolute limit
+        fc.wbpct = -1
+        fc.cbpct = -1
+        fc.wbfree = int(f[1])
+        fc.cbfree = (fc.wbfree + 1) / 2
+except:
+  pass
+
+# Detect and work around screwy Solaris df
+df = '/bin/df'
+if os.path.islink(df):
+  df = '/usr/ucb/df'
+
+df += ' -l'  # local filesystems only
+
+parsepipe(df, do_data)
+parsepipe(df + ' -i', do_inode)
+
+results = []
+
+for fsn in fs.keys():
+  f = fs[fsn]
+  if f.bfpct != 999:
+    results += ["%4d %s %s (%d%% inode=%d%%):" %
+      (f.sortkey, fsn, kdisplay(f.avail), f.bfpct, f.ifpct)]
+
+if status > 2:
+  status = 2
+
+out = 'DISK %s - free space:' % statusnames[status]
+
+results.sort()
+for r in results:
+  out += r[4:]
+
+print out
+sys.exit(status)

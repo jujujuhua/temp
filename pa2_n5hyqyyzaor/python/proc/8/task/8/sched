@@ -1,0 +1,21 @@
+rcu_bh (8, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :            64.000000
+se.vruntime                                  :            15.989367
+se.sum_exec_runtime                          :             0.000000
+nr_switches                                  :                    2
+nr_voluntary_switches                        :                    2
+nr_involuntary_switches                      :                    0
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                   62
+se.avg.running_avg_sum                       :                   62
+se.avg.avg_period                            :                   62
+se.avg.load_avg_contrib                      :                 1007
+se.avg.utilization_avg_contrib               :                 1007
+se.avg.decay_count                           :                   62
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  155
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

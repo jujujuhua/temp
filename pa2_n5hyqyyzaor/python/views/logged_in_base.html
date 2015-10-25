@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+{% if user != "" %}
+<h3>Logged in as {{user}}</h3>
+
+<html lang="en">
+  <head>
+    
+  <meta charset = "UTF-8">
+  <meta name = "author" content = "group58">
+  <meta name = "description" content = "PA1">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <title align="center">EECS485PA1</title>
+</head>
+  <body>
+    <header> <form method="get" action="{{url_for('main.index')}}">
+                <input type="submit" value="Home"/>
+              </form>
+              <form method="get" action="{{url_for('main.edit_acc')}}">
+                <input type="submit" value="Edit account"/>
+              </form>
+              <form method="get" action="{{url_for('albums.myAlbums')}}">
+                <input type="submit" value="My albums"/>
+              </form>
+              <form method="POST" action="{{url_for('main.logout')}}">
+                <input type="submit" value="Log out"/>
+                 <input type="hidden" name="username" value = {{user}}>
+              </form>
+    </header>
+{% endif %}
+
+{%if user == ""%}
+<h3>Welcome Guest!</h3>
+<html lang="en">
+  <head>
+    
+  <meta charset = "UTF-8">
+  <meta name = "author" content = "group58">
+  <meta name = "description" content = "PA1">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <title align="center">EECS485PA1</title>
+</head>
+  <body>
+    <header> <form method="get" action="{{url_for('main.index')}}">
+                <input type="submit" value="Home"/>
+              </form>
+              <form method="get" action="{{url_for('main.edit_acc')}}">
+                <input type="hidden" value="Edit account"/>
+              </form>
+              <form method="get" action="{{url_for('albums.myAlbums')}}">
+                <input type="submit" value="Public Albums"/>
+              </form>
+              <form method="POST" action="{{url_for('main.logout')}}">
+                <input type="hidden" value="Log out"/>
+                 <input type="hidden" name="username" value = {{user}}>
+              </form>
+    </header>
+{% endif %}
+  <div class="center">
+    {% block content %}{% endblock %}
+  </div>
+  <script type="text/javascript" src="/static/js/main.js"></script>
+<footer align="left"> <font size="1"> xts&cobbju&jinhping </font></footer>
+
+ <table style="width:100%">
+    {% for album in album_list %}
+    <tr>
+      <td> {{album[1]}} </td>
+      
+      <td><form method="get" action="/n5hyqyyzaor/pa2/album?id={{album[0]}}">
+    <input type="hidden" name="id" value="{{album[0]}}" />
+    <input type="submit" value="View"/>
+          </form></td>
+      
+    </tr>
+    {% endfor %}
+</table>
+
+
+<table style="width:100%">
+    {% for album in album_list0 %}
+    <tr>
+      <td> {{album[1]}} </td>
+      
+      <td><form method="get" action="/n5hyqyyzaor/pa2/album?id={{album[0]}}">
+    <input type="hidden" name="id" value="{{album[0]}}" />
+    <input type="submit" value="View"/>
+          </form></td>
+      
+    </tr>
+    {% endfor %}
+</table> 
+
+
+</body>
+
+
+</html>

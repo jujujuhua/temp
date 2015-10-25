@@ -1,0 +1,21 @@
+rcuos/1 (18, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :    1607936950.072125
+se.vruntime                                  :       7565151.243341
+se.sum_exec_runtime                          :         31523.364888
+nr_switches                                  :              6050092
+nr_voluntary_switches                        :              6049948
+nr_involuntary_switches                      :                  144
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                  139
+se.avg.running_avg_sum                       :                    2
+se.avg.avg_period                            :                46117
+se.avg.load_avg_contrib                      :                    3
+se.avg.utilization_avg_contrib               :                    0
+se.avg.decay_count                           :           1533448172
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  156
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

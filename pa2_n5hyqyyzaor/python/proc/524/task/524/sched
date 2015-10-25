@@ -1,0 +1,22 @@
+crond (524, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :    1607895950.349484
+se.vruntime                                  :      18082177.321740
+se.sum_exec_runtime                          :          1625.022434
+nr_switches                                  :                27473
+nr_voluntary_switches                        :                27260
+nr_involuntary_switches                      :                  213
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                   71
+se.avg.running_avg_sum                       :                   71
+se.avg.avg_period                            :                48216
+se.avg.load_avg_contrib                      :                    0
+se.avg.utilization_avg_contrib               :                    0
+se.avg.decay_count                           :           1533409072
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  155
+mm->numa_scan_seq                            :                    0
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

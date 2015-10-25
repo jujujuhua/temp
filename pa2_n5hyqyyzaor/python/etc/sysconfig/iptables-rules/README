@@ -1,0 +1,4 @@
+Add any customized or extra rules for INPUT chain to rules.add
+Add any customized or extra rules for OUTPUT chain to rules.out
+
+Then run addrules to incorporate the new rules or restarting iptables

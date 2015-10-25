@@ -1,0 +1,9 @@
+/var/log/dovecot {
+    missingok
+    notifempty
+    sharedscripts
+    delaycompress
+    postrotate
+        /etc/init.d/dovecot restart > /dev/null 2>/dev/null || true
+    endscript
+}

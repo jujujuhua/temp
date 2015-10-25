@@ -1,0 +1,47 @@
+{% extends "logged_in_base.html" %}
+{% block content %}
+  
+  
+    <table style="width:100%">
+    <tr><td><b>Private Albums:</b></td></tr><br>
+      {% for album in albums %}
+      <tr>
+
+	<td>{{album[1]}}<small><sub>  Owned by {{album[4]}}</sub></small></td>
+	<td><form method="get" action="/n5hyqyyzaor/pa2/album?id={{album[0]}}">
+	  <input type="hidden" name="id" value="{{album[0]}}"/>
+	  <input type="submit"  value="View"/>
+	</form></td>
+      </tr>
+      {% endfor %}
+
+      <tr><td><b>Authorized Albums:</b></td></tr><br>
+      {% for album in albums_authorized %}
+      
+      <tr>
+
+  <td>{{album[1]}}<small><sub>  Owned by {{album[4]}}</sub></small></td>
+  <td><form method="get" action="/n5hyqyyzaor/pa2/album?id={{album[0]}}">
+    <input type="hidden" name="id" value="{{album[0]}}"/>
+    <input type="submit"  value="View"/>
+  </form></td>
+      </tr>
+      {% endfor %}
+
+      <tr><td><b>Public Albums:</b></td></tr><br>
+      {% for album in albums_public %}
+      
+      <tr>
+
+  <td>{{album[1]}}<small><sub>  Owned by {{album[4]}}</sub></small></td>
+  <td><form method="get" action="/n5hyqyyzaor/pa2/album?id={{album[0]}}">
+    <input type="hidden" name="id" value="{{album[0]}}"/>
+    <input type="submit"  value="View"/>
+  </form></td>
+      </tr>
+      {% endfor %}
+
+
+
+    </table>
+{% endblock %}

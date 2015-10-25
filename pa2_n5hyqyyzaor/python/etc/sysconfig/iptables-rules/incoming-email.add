@@ -1,0 +1,4 @@
+# allow imap and pop (secure)
+
+iptables -A INPUT -p tcp --dport 995 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p tcp --dport 993 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT

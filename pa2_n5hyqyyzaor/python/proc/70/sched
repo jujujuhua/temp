@@ -1,0 +1,21 @@
+dm_bufio_cache (70, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :           763.453813
+se.vruntime                                  :           160.630060
+se.sum_exec_runtime                          :             0.018217
+nr_switches                                  :                    2
+nr_voluntary_switches                        :                    2
+nr_involuntary_switches                      :                    0
+se.load.weight                               :                88761
+se.avg.runnable_avg_sum                      :                11734
+se.avg.running_avg_sum                       :                11734
+se.avg.avg_period                            :                11749
+se.avg.load_avg_contrib                      :                 1023
+se.avg.utilization_avg_contrib               :                 1023
+se.avg.decay_count                           :                  729
+policy                                       :                    0
+prio                                         :                  100
+clock-delta                                  :                  156
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

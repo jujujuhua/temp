@@ -1,0 +1,82 @@
+[libdefaults]
+	default_realm = UMICH.EDU
+	forwardable = true
+	dns_lookup_kdc = true
+
+[logging]
+	default = SYSLOG
+
+[realms]
+	K5TEST.IFS.UMICH.EDU = {
+		kdc = index.ifs.umich.edu:88
+		master_kdc = index.ifs.umich.edu:88
+		admin_server = index.ifs.umich.edu:749
+	}	
+
+	ENGIN.UMICH.EDU = {
+		kdc = kerberos-1.engin.umich.edu:88
+		kdc = kerberos-2.engin.umich.edu:88
+		kdc = kerberos-3.engin.umich.edu:88
+		admin_server = kerberos-admin.engin.umich.edu:749
+	}
+	UMICH.EDU = {
+		kdc = kerberos-3.umich.edu:88
+		kdc = kerberos-2.umich.edu:88
+		kdc = kerberos-1.umich.edu:88
+		admin_server = kerberos-admin.umich.edu:749
+	}
+	CITI.UMICH.EDU = {
+		kdc = kerberos.citi.umich.edu:88
+		admin_server = kerberos.citi.umich.edu:749
+	}
+	U.MHPCC.EDU = {
+		kdc = pakakala.mhpcc.edu:88
+		admin_server = pakakala.mhpcc.edu:749
+	}
+     	HPCMO.HPC.MIL = {
+     		kdc = kdc1.hpcmo.hpc.mil
+     		admin_server = kdc1.hpcmo.hpc.mil
+     		default_domain = hpcmo.hpc.mil
+     	}
+	HPCMP.HPC.MIL = {
+		kdc = kdc1.hpcmp.hpc.mil
+		kdc = kdc2.hpcmp.hpc.mil
+		admin_server = kdc1.hpcmp.hpc.mil
+		default_domain = hpcmp.hpc.mil
+	}
+	NAVO.HPC.MIL = {
+		kdc = kdc1.navo.hpc.mil
+		kdc = kdc2.navo.hpc.mil
+		admin_server = kdc1.navo.hpc.mil
+	}
+
+[capaths]
+	UMICH.EDU = {
+		AD.ENGIN.UMICH.EDU = ADSROOT.ITCS.UMICH.EDU
+		ADS.ITCS.UMICH.EDU = ADSROOT.ITCS.UMICH.EDU
+	}
+
+[domain_realm]
+	index.ifs.umich.edu = K5TEST.IFS.UMICH.EDU
+	dc.umich.edu = ENGIN.UMICH.EDU
+	.dc.umich.edu = ENGIN.UMICH.EDU
+	engin.umich.edu = ENGIN.UMICH.EDU
+	.engin.umich.edu = ENGIN.UMICH.EDU
+	ummu.umich.edu  = ENGIN.UMICH.EDU
+	.ummu.umich.edu  = ENGIN.UMICH.EDU
+	umdl.umich.edu  = ENGIN.UMICH.EDU
+	.umdl.umich.edu  = ENGIN.UMICH.EDU
+	citi.umich.edu = CITI.UMICH.EDU
+	.citi.umich.edu = CITI.UMICH.EDU
+	umich.edu = UMICH.EDU
+	.umich.edu = UMICH.EDU
+	mhpcc.edu = U.MHPCC.EDU
+	.mhpcc.edu = U.MHPCC.EDU
+	hpcmo.hpc.mil = HPCMO.HPC.MIL
+	.hpcmo.hpc.mil = HPCMO.HPC.MIL
+	nosc.mil = HPCMP.HPC.MIL
+	.nosc.mil = HPCMP.HPC.MIL
+	hpcmp.hpc.mil = HPCMP.HPC.MIL
+	.hpcmp.hpc.mil = HPCMP.HPC.MIL
+	navo.hpc.mil = NAVO.HPC.MIL
+	.navo.hpc.mil = NAVO.HPC.MIL

@@ -1,0 +1,64 @@
+<script type="text/javascript">
+function validate() {
+  var p1 = document.getElementById('pass0');
+  var p2 = document.getElementById('pass1');
+  if (p1.value != p2.value){
+    alert('Passwords did not match!');
+  }
+
+}
+</script>
+
+{% extends "base.html" %}
+{% block content %}
+
+  <div>
+    {% if err == 1 %}
+      <script>
+        alert("error 1 : password mismatch")
+      </script>
+    {%endif %}
+    {% if err == 2 %}
+      <script>
+        alert("error 2 : username and password did not pass validation test")
+      </script>
+    {%endif %}
+     {% if err == 4 %}
+      <script>
+        alert("error 4 : username already exists")
+      </script>
+    {%endif %}
+</div>
+
+
+  <h1>Sign up</h1>
+  <form name = "signup" onsubmit = "validate()" method = 'POST'>
+  
+  Firstname:<br>
+  <input type="text" name="firstname" pattern="^[A-Za-z0-9_]+$" minlength="3" maxlength="20" required>
+  <br>
+
+  Lastname:<br>
+  <input type="text" name="lastname" maxlength="20" required>
+  <br>
+
+  Email:<br>
+  <input type="text" name="email" maxlength="20" required>
+  <br>
+
+  Username:<br>
+  <input type="text" name="username" maxlength="20" required>
+  <br>
+  
+  Password:<br>
+  <input type="password" name="pass0" id = "pass0" pattern="^[a-zA-Z0-9_]*[a-zA-Z]+[a-zA-Z0-9_]*[0-9]+[a-zA-Z0-9_]*$||^[a-zA-Z0-9_]*[0-9]+[a-zA-Z0-9_]*[a-zA-Z]+[a-zA-Z0-9_]*$"   minlength="5" maxlength="15" required>
+  <br>
+
+  Password:<br>
+  <input type="password" name="pass1" id = "pass1" pattern="^[a-zA-Z0-9_]*[a-zA-Z]+[a-zA-Z0-9_]*[0-9]+[a-zA-Z0-9_]*$||^[a-zA-Z0-9_]*[0-9]+[a-zA-Z0-9_]*[a-zA-Z]+[a-zA-Z0-9_]*$"  minlength="5" maxlength="15" required>
+
+  <br><br>
+  <input type="submit"  value="Sign Up" required/>
+</form>
+
+{% endblock %}

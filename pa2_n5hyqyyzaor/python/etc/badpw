@@ -1,0 +1,11 @@
+#!/bin/sh
+cat <<GUMBO
+
+Your account has been disabled due to an expired, weak, or cracked
+password.  We were forced to take this step as a security measure to
+prevent unauthorized use of your account.  Please stop by the DCO
+offices in 4401/4403 EECS or send mail to "help@eecs.umich.edu"
+to obtain assistance reactivating your account.
+
+GUMBO
+sleep 20

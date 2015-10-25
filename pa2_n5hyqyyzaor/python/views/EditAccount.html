@@ -1,0 +1,80 @@
+<script type="text/javascript">
+function validate() {
+  var p1 = document.getElementById('pass0');
+  var p2 = document.getElementById('pass1');
+  if (p1.value != p2.value){
+    alert('Passwords did not match!');
+  }
+
+}
+</script>
+
+
+{% extends "base.html" %}
+{% block content %}
+
+  <div>
+    {% if err == 0 %}
+      <script>
+        alert("Username does not exist!")
+      </script>
+    {%endif %}
+    {% if err == 1 %}
+      <script>
+        alert("Password 1 does not match with password 0 ")
+      </script>
+    {%endif %}
+    {% if err == 2 %}
+      <script>
+        alert("not validate password or emailaddress")
+      </script>
+    {%endif %}
+      {% if err == 5 %}
+      <script>
+        alert("Length of firstname of lastname is too long !")
+      </script>
+    {%endif %}
+  </div>
+
+
+
+  <h1>Edit Account {{temp}}</h1>
+
+  
+   
+
+  <form name = "editaccount" onsubmit = "validate()" method = 'POST'>
+ 
+  <br>
+  First name:<br>
+  <input type="text" name="firstname" value= "default" pattern="^[A-Za-z0-9_]+$" minlength="3" maxlength="20">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value= "default"  pattern="^[A-Za-z0-9_]+$"maxlength="20">
+  <br>
+  Password:<br>
+  <input type="password" name="password0" value= "default" maxlength="20" 
+  pattern="^[a-zA-Z0-9_]*[a-zA-Z]+[a-zA-Z0-9_]*[0-9]+[a-zA-Z0-9_]*$||^[a-zA-Z0-9_]*[0-9]+[a-zA-Z0-9_]*[a-zA-Z]+[a-zA-Z0-9_]*$"  minlength="5" maxlength="15" >
+  <br>
+  Re-Password:<br>
+  <input type="password" name="password1" value= "default"  
+  pattern="^[a-zA-Z0-9_]*[a-zA-Z]+[a-zA-Z0-9_]*[0-9]+[a-zA-Z0-9_]*$||^[a-zA-Z0-9_]*[0-9]+[a-zA-Z0-9_]*[a-zA-Z]+[a-zA-Z0-9_]*$" minlength="5" maxlength="15">
+  <br>
+  Email Address:<br>
+  <input type="text" name="emailaddress" value= "default"  maxlength="40">
+  <br>
+  <input type="submit"  value="Submit Change"/>
+
+  <br>
+
+</form>
+
+
+
+<a href = "{{url_for('main.delete_acc')}}">Delete this account</a>
+
+
+
+
+
+{% endblock %}

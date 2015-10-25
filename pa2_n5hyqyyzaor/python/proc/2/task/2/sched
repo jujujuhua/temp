@@ -1,0 +1,21 @@
+kthreadd (2, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :    1607709152.156336
+se.vruntime                                  :       7562209.039088
+se.sum_exec_runtime                          :           227.373748
+nr_switches                                  :                 8282
+nr_voluntary_switches                        :                 8279
+nr_involuntary_switches                      :                    3
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                   34
+se.avg.running_avg_sum                       :                   33
+se.avg.avg_period                            :                47821
+se.avg.load_avg_contrib                      :                    0
+se.avg.utilization_avg_contrib               :                    0
+se.avg.decay_count                           :           1533230927
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  151
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

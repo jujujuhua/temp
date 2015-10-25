@@ -1,0 +1,46 @@
+Name:	smartd
+State:	S (sleeping)
+Tgid:	493
+Ngid:	0
+Pid:	493
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	64
+Groups:	
+NStgid:	493
+NSpid:	493
+NSpgid:	493
+NSsid:	493
+VmPeak:	   25376 kB
+VmSize:	   24980 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    4168 kB
+VmRSS:	    2852 kB
+VmData:	     536 kB
+VmStk:	     136 kB
+VmExe:	     508 kB
+VmLib:	    5200 kB
+VmPTE:	      68 kB
+VmPMD:	      12 kB
+VmSwap:	     592 kB
+Threads:	1
+SigQ:	1/7921
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	0000000180004207
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+Seccomp:	0
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	2730
+nonvoluntary_ctxt_switches:	775

@@ -1,0 +1,46 @@
+Name:	auditd
+State:	S (sleeping)
+Tgid:	470
+Ngid:	0
+Pid:	490
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	64
+Groups:	
+NStgid:	470
+NSpid:	490
+NSpgid:	470
+NSsid:	470
+VmPeak:	  180136 kB
+VmSize:	  114624 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    3092 kB
+VmRSS:	    2652 kB
+VmData:	   74032 kB
+VmStk:	     136 kB
+VmExe:	     132 kB
+VmLib:	    5316 kB
+VmPTE:	     104 kB
+VmPMD:	      12 kB
+VmSwap:	     292 kB
+Threads:	2
+SigQ:	1/7921
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000006a01
+SigIgn:	fffffffe7ffab4fe
+SigCgt:	0000000180014a01
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+Seccomp:	0
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	918465
+nonvoluntary_ctxt_switches:	23875

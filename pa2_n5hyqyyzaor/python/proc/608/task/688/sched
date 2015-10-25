@@ -1,0 +1,22 @@
+gmain (688, #threads: 4)
+-------------------------------------------------------------------
+se.exec_start                                :    1566631843.721021
+se.vruntime                                  :      22544510.759552
+se.sum_exec_runtime                          :           103.354783
+nr_switches                                  :                 2195
+nr_voluntary_switches                        :                 2173
+nr_involuntary_switches                      :                   22
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                   64
+se.avg.running_avg_sum                       :                   64
+se.avg.avg_period                            :                48824
+se.avg.load_avg_contrib                      :                    0
+se.avg.utilization_avg_contrib               :                    0
+se.avg.decay_count                           :           1494056553
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  151
+mm->numa_scan_seq                            :                    0
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

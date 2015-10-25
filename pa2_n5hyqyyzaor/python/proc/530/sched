@@ -1,0 +1,22 @@
+agetty (530, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :         17477.454801
+se.vruntime                                  :             3.264241
+se.sum_exec_runtime                          :             6.200113
+nr_switches                                  :                    9
+nr_voluntary_switches                        :                    8
+nr_involuntary_switches                      :                    1
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                 4379
+se.avg.running_avg_sum                       :                 4320
+se.avg.avg_period                            :                47804
+se.avg.load_avg_contrib                      :                   82
+se.avg.utilization_avg_contrib               :                   81
+se.avg.decay_count                           :                16668
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  155
+mm->numa_scan_seq                            :                    0
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

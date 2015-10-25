@@ -1,0 +1,31 @@
+#!/usr/bin/python
+import os,re,sys,time
+
+warn = 2  # Warn at 2 degrees C over reference temp
+crit = 5  # Critical at 5 degrees C over reference temp
+
+sensorcmd = '/usr/bin/sensors'
+reffile = 'sensor-ref'
+degree = '\302?\260'  # degree symbol (superscript circle)
+degreeflag = '\260'  # degree symbol (superscript circle), short version
+
+temps = []
+templen = -1
+for datafile in sys.argv[1:]:
+  try:
+    reftemps = file(datafile).read()
+    if degreeflag in reftemps:
+      newtemps = re.findall('([-+]?[.\d]+)' + degree, reftemps)
+    else:
+      newtemps = reftemps.split()
+    if templen == -1 and len(newtemps) > 0:
+      templen = len(newtemps)
+    if len(newtemps) == templen:
+      temps += [[float(t) for t in newtemps]]
+    else:
+      sys.stderr.write('Ignored input file with bad data: %s (expected %d got %d)\n' % (datafile, templen, len(newtemps)))
+  except:
+    sys.stderr.write('Ignored input file read error: %s\n' % datafile)
+
+for m in apply(zip, temps):
+  print '%.1f' % max(m)

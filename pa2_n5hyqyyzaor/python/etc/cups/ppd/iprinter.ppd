@@ -1,0 +1,517 @@
+*PPD-Adobe: "4.3"
+*%
+*% For information on using this, and to obtain the required backend
+*% script, consult http://www.openprinting.org/
+*%
+*% This file is published under the GNU General Public License
+*%
+*% PPD-O-MATIC (3.0.0 or newer) generated this PPD file. It is for use with 
+*% all programs and environments which use PPD files for dealing with
+*% printer capability information. The printer must be configured with the
+*% "foomatic-rip" backend filter script of Foomatic 3.0.0 or newer. This 
+*% file and "foomatic-rip" work together to support PPD-controlled printer
+*% driver option access with arbitrary free software printer drivers and
+*% printing spoolers.
+*%
+*% To save this file on your disk, wait until the download has completed
+*% (the animation of the browser logo must stop) and then use the
+*% "Save as..." command in the "File" menu of your browser or in the 
+*% pop-up manu when you click on this document with the right mouse button.
+*% DO NOT cut and paste this file into an editor with your mouse. This can
+*% introduce additional line breaks which lead to unexpected results.
+*%
+*% You may save this file as 'Generic-PCL_6_PCL_XL_Printer-gutenprint-ijs-simplified.5.0.ppd'
+*%
+*%
+*FormatVersion:	"4.3"
+*FileVersion:	"1.1"
+*LanguageVersion: English 
+*LanguageEncoding: ISOLatin1
+*PCFileName:	"GUTENPRI.PPD"
+*Manufacturer:	"Generic"
+*Product:	"(PCL 6/PCL XL Printer)"
+*cupsVersion:	1.0
+*cupsManualCopies: True
+*cupsModelNumber:  2
+*cupsFilter:	"application/vnd.cups-postscript 0 foomatic-rip"
+*%pprRIP:        foomatic-rip other
+*ModelName:     "Generic PCL 6/PCL XL Printer"
+*ShortNickName: "Gen. PCL 6/PCL, g.-ijs-s..5.0"
+*NickName:      "Generic PCL 6/PCL XL Printer Foomatic/gutenprint-ijs-simplified.5.0"
+*PSVersion:	"(3010.000) 550"
+*PSVersion:	"(3010.000) 651"
+*PSVersion:	"(3010.000) 652"
+*PSVersion:	"(3010.000) 653"
+*PSVersion:	"(3010.000) 704"
+*PSVersion:	"(3010.000) 705"
+*PSVersion:	"(3010.000) 800"
+*LanguageLevel:	"3"
+*ColorDevice:	True
+*DefaultColorSpace: RGB
+*FileSystem:	False
+*Throughput:	"1"
+*LandscapeOrientation: Plus90
+*TTRasterizer:	Type42
+*1284DeviceID: "DRV:Dgutenprint-ijs-simplified.5.0,R0,M0,TF;"
+
+*driverName gutenprint-ijs-simplified.5.0/gutenprint-ijs-simplified.5.0: ""
+*driverType F/Filter: ""
+*driverUrl: "http://gimp-print.sourceforge.net/"
+*driverObsolete: False
+
+
+
+
+*VariablePaperSize: False
+
+*FoomaticIDs: Generic-PCL_6_PCL_XL_Printer gutenprint-ijs-simplified.5.0
+*FoomaticRIPCommandLine: "gs -q -dPARANOIDSAFER -dNOPAUSE -dBATCH -sDE&&
+VICE=ijs -sIjsServer=ijsgutenprint.5.0 -dIjsUseOutputFD%A -sIjsParams=&&
+&quot;STP_VERSION=5.0.2,%B&quot;%Z -sOutputFile=- -"
+*End
+
+*OpenGroup: General/General
+
+*OpenUI *PrintoutMode/Printout Mode: PickOne
+*FoomaticRIPOption PrintoutMode: enum Composite A
+*OrderDependency: 10 AnySetup *PrintoutMode
+*DefaultPrintoutMode: Normal
+*PrintoutMode Draft/Draft (Economy): "%% FoomaticRIPOptionSetting: PrintoutMode=Draft"
+*FoomaticRIPOptionSetting PrintoutMode=Draft: "STP_ImageType=TextGraph&&
+ics STP_Resolution=150dpi Resolution=150x150dpi OutputType=Grayscale"
+*End
+*PrintoutMode Normal/Normal: "%% FoomaticRIPOptionSetting: PrintoutMode=Normal"
+*FoomaticRIPOptionSetting PrintoutMode=Normal: "STP_ImageType=TextGrap&&
+hics STP_Resolution=300dpi Resolution=300x300dpi OutputType=Grayscale"
+*End
+*PrintoutMode High/High Quality: "%% FoomaticRIPOptionSetting: PrintoutMode=High"
+*FoomaticRIPOptionSetting PrintoutMode=High: "STP_ImageType=TextGraphi&&
+cs STP_Resolution=600dpi Resolution=600x600dpi OutputType=Grayscale"
+*End
+*PrintoutMode Photo/Photo: "%% FoomaticRIPOptionSetting: PrintoutMode=Photo"
+*FoomaticRIPOptionSetting PrintoutMode=Photo: "STP_ImageType=Photo STP&&
+_Resolution=600dpi Resolution=600x600dpi OutputType=Grayscale"
+*End
+*CloseUI: *PrintoutMode
+
+*OpenUI *InputSlot/Media Source: PickOne
+*FoomaticRIPOption InputSlot: enum CmdLine B
+*OrderDependency: 1000 AnySetup *InputSlot
+*DefaultInputSlot: Standard
+*InputSlot Upper/Tray 2: "%% FoomaticRIPOptionSetting: InputSlot=Upper"
+*FoomaticRIPOptionSetting InputSlot=Upper: "STP_InputSlot=Upper,"
+*InputSlot Lower/Tray 3: "%% FoomaticRIPOptionSetting: InputSlot=Lower"
+*FoomaticRIPOptionSetting InputSlot=Lower: "STP_InputSlot=Lower,"
+*InputSlot MultiPurpose/Tray 1: "%% FoomaticRIPOptionSetting: InputSlot=MultiPurpose"
+*FoomaticRIPOptionSetting InputSlot=MultiPurpose: "STP_InputSlot=Multi&&
+Purpose,"
+*End
+*InputSlot LargeCapacity/Tray 4: "%% FoomaticRIPOptionSetting: InputSlot=LargeCapacity"
+*FoomaticRIPOptionSetting InputSlot=LargeCapacity: "STP_InputSlot=Larg&&
+eCapacity,"
+*End
+*InputSlot Manual/Manual: "%% FoomaticRIPOptionSetting: InputSlot=Manual"
+*FoomaticRIPOptionSetting InputSlot=Manual: "STP_InputSlot=Manual,"
+*InputSlot Standard/Standard: "%% FoomaticRIPOptionSetting: InputSlot=Standard"
+*FoomaticRIPOptionSetting InputSlot=Standard: "STP_InputSlot=Standard,&&
+"
+*End
+*CloseUI: *InputSlot
+
+*OpenUI *PageSize/Page Size: PickOne
+*FoomaticRIPOption PageSize: enum CmdLine A
+*OrderDependency: 110 AnySetup *PageSize
+*DefaultPageSize: Letter
+*PageSize Letter/Letter: "%% FoomaticRIPOptionSetting: PageSize=Letter"
+*FoomaticRIPOptionSetting PageSize=Letter: " -dDEVICEWIDTHPOINTS=612 -&&
+dDEVICEHEIGHTPOINTS=792"
+*End
+*PageSize A4/A4: "%% FoomaticRIPOptionSetting: PageSize=A4"
+*FoomaticRIPOptionSetting PageSize=A4: " -dDEVICEWIDTHPOINTS=595 -dDEV&&
+ICEHEIGHTPOINTS=842"
+*End
+*PageSize Executive/Executive: "%% FoomaticRIPOptionSetting: PageSize=Executive"
+*FoomaticRIPOptionSetting PageSize=Executive: " -dDEVICEWIDTHPOINTS=52&&
+2 -dDEVICEHEIGHTPOINTS=756"
+*End
+*PageSize Legal/Legal: "%% FoomaticRIPOptionSetting: PageSize=Legal"
+*FoomaticRIPOptionSetting PageSize=Legal: " -dDEVICEWIDTHPOINTS=612 -d&&
+DEVICEHEIGHTPOINTS=1008"
+*End
+*PageSize Statement/Manual: "%% FoomaticRIPOptionSetting: PageSize=Statement"
+*FoomaticRIPOptionSetting PageSize=Statement: " -dDEVICEWIDTHPOINTS=39&&
+6 -dDEVICEHEIGHTPOINTS=612"
+*End
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 110 AnySetup *PageRegion
+*DefaultPageRegion: Letter
+*PageRegion Letter/Letter: "%% FoomaticRIPOptionSetting: PageSize=Letter"
+*PageRegion A4/A4: "%% FoomaticRIPOptionSetting: PageSize=A4"
+*PageRegion Executive/Executive: "%% FoomaticRIPOptionSetting: PageSize=Executive"
+*PageRegion Legal/Legal: "%% FoomaticRIPOptionSetting: PageSize=Legal"
+*PageRegion Statement/Manual: "%% FoomaticRIPOptionSetting: PageSize=Statement"
+*CloseUI: *PageRegion
+
+*DefaultImageableArea: Letter
+*ImageableArea Letter/Letter: "18 12 594 780"
+*ImageableArea A4/A4: "10 12 585 830"
+*ImageableArea Executive/Executive: "18 12 504 744"
+*ImageableArea Legal/Legal: "18 12 594 996"
+*ImageableArea Statement/Manual: "18 12 378 600"
+
+*DefaultPaperDimension: Letter
+*PaperDimension Letter/Letter: "612 792"
+*PaperDimension A4/A4: "595 842"
+*PaperDimension Executive/Executive: "522 756"
+*PaperDimension Legal/Legal: "612 1008"
+*PaperDimension Statement/Manual: "396 612"
+
+*CloseGroup: General
+
+*OpenGroup: GutenprintOutputControlCommon/Gutenprint Output Control Common
+
+*OpenUI *STP_Brightness/Brightness: PickOne
+*FoomaticRIPOption STP_Brightness: float CmdLine B
+*FoomaticRIPOptionPrototype STP_Brightness: "STP_Brightness=%s,"
+*FoomaticRIPOptionRange STP_Brightness: 0 2
+*OrderDependency: 1110 AnySetup *STP_Brightness
+*DefaultSTP_Brightness: 1.00
+*FoomaticRIPDefaultSTP_Brightness: 1.00
+*STP_Brightness 0.00/0.00: "%% FoomaticRIPOptionSetting: STP_Brightness=0.00"
+*STP_Brightness 0.02/0.02: "%% FoomaticRIPOptionSetting: STP_Brightness=0.02"
+*STP_Brightness 0.04/0.04: "%% FoomaticRIPOptionSetting: STP_Brightness=0.04"
+*STP_Brightness 0.06/0.06: "%% FoomaticRIPOptionSetting: STP_Brightness=0.06"
+*STP_Brightness 0.08/0.08: "%% FoomaticRIPOptionSetting: STP_Brightness=0.08"
+*STP_Brightness 0.10/0.10: "%% FoomaticRIPOptionSetting: STP_Brightness=0.10"
+*STP_Brightness 0.12/0.12: "%% FoomaticRIPOptionSetting: STP_Brightness=0.12"
+*STP_Brightness 0.14/0.14: "%% FoomaticRIPOptionSetting: STP_Brightness=0.14"
+*STP_Brightness 0.16/0.16: "%% FoomaticRIPOptionSetting: STP_Brightness=0.16"
+*STP_Brightness 0.18/0.18: "%% FoomaticRIPOptionSetting: STP_Brightness=0.18"
+*STP_Brightness 0.20/0.20: "%% FoomaticRIPOptionSetting: STP_Brightness=0.20"
+*STP_Brightness 0.22/0.22: "%% FoomaticRIPOptionSetting: STP_Brightness=0.22"
+*STP_Brightness 0.24/0.24: "%% FoomaticRIPOptionSetting: STP_Brightness=0.24"
+*STP_Brightness 0.26/0.26: "%% FoomaticRIPOptionSetting: STP_Brightness=0.26"
+*STP_Brightness 0.28/0.28: "%% FoomaticRIPOptionSetting: STP_Brightness=0.28"
+*STP_Brightness 0.30/0.30: "%% FoomaticRIPOptionSetting: STP_Brightness=0.30"
+*STP_Brightness 0.32/0.32: "%% FoomaticRIPOptionSetting: STP_Brightness=0.32"
+*STP_Brightness 0.34/0.34: "%% FoomaticRIPOptionSetting: STP_Brightness=0.34"
+*STP_Brightness 0.36/0.36: "%% FoomaticRIPOptionSetting: STP_Brightness=0.36"
+*STP_Brightness 0.38/0.38: "%% FoomaticRIPOptionSetting: STP_Brightness=0.38"
+*STP_Brightness 0.40/0.40: "%% FoomaticRIPOptionSetting: STP_Brightness=0.40"
+*STP_Brightness 0.42/0.42: "%% FoomaticRIPOptionSetting: STP_Brightness=0.42"
+*STP_Brightness 0.44/0.44: "%% FoomaticRIPOptionSetting: STP_Brightness=0.44"
+*STP_Brightness 0.46/0.46: "%% FoomaticRIPOptionSetting: STP_Brightness=0.46"
+*STP_Brightness 0.48/0.48: "%% FoomaticRIPOptionSetting: STP_Brightness=0.48"
+*STP_Brightness 0.50/0.50: "%% FoomaticRIPOptionSetting: STP_Brightness=0.50"
+*STP_Brightness 0.52/0.52: "%% FoomaticRIPOptionSetting: STP_Brightness=0.52"
+*STP_Brightness 0.54/0.54: "%% FoomaticRIPOptionSetting: STP_Brightness=0.54"
+*STP_Brightness 0.56/0.56: "%% FoomaticRIPOptionSetting: STP_Brightness=0.56"
+*STP_Brightness 0.58/0.58: "%% FoomaticRIPOptionSetting: STP_Brightness=0.58"
+*STP_Brightness 0.60/0.60: "%% FoomaticRIPOptionSetting: STP_Brightness=0.60"
+*STP_Brightness 0.62/0.62: "%% FoomaticRIPOptionSetting: STP_Brightness=0.62"
+*STP_Brightness 0.64/0.64: "%% FoomaticRIPOptionSetting: STP_Brightness=0.64"
+*STP_Brightness 0.66/0.66: "%% FoomaticRIPOptionSetting: STP_Brightness=0.66"
+*STP_Brightness 0.68/0.68: "%% FoomaticRIPOptionSetting: STP_Brightness=0.68"
+*STP_Brightness 0.70/0.70: "%% FoomaticRIPOptionSetting: STP_Brightness=0.70"
+*STP_Brightness 0.72/0.72: "%% FoomaticRIPOptionSetting: STP_Brightness=0.72"
+*STP_Brightness 0.74/0.74: "%% FoomaticRIPOptionSetting: STP_Brightness=0.74"
+*STP_Brightness 0.76/0.76: "%% FoomaticRIPOptionSetting: STP_Brightness=0.76"
+*STP_Brightness 0.78/0.78: "%% FoomaticRIPOptionSetting: STP_Brightness=0.78"
+*STP_Brightness 0.80/0.80: "%% FoomaticRIPOptionSetting: STP_Brightness=0.80"
+*STP_Brightness 0.82/0.82: "%% FoomaticRIPOptionSetting: STP_Brightness=0.82"
+*STP_Brightness 0.84/0.84: "%% FoomaticRIPOptionSetting: STP_Brightness=0.84"
+*STP_Brightness 0.86/0.86: "%% FoomaticRIPOptionSetting: STP_Brightness=0.86"
+*STP_Brightness 0.88/0.88: "%% FoomaticRIPOptionSetting: STP_Brightness=0.88"
+*STP_Brightness 0.90/0.90: "%% FoomaticRIPOptionSetting: STP_Brightness=0.90"
+*STP_Brightness 0.92/0.92: "%% FoomaticRIPOptionSetting: STP_Brightness=0.92"
+*STP_Brightness 0.94/0.94: "%% FoomaticRIPOptionSetting: STP_Brightness=0.94"
+*STP_Brightness 0.96/0.96: "%% FoomaticRIPOptionSetting: STP_Brightness=0.96"
+*STP_Brightness 0.98/0.98: "%% FoomaticRIPOptionSetting: STP_Brightness=0.98"
+*STP_Brightness 1.00/1.00: "%% FoomaticRIPOptionSetting: STP_Brightness=1.00"
+*STP_Brightness 1.02/1.02: "%% FoomaticRIPOptionSetting: STP_Brightness=1.02"
+*STP_Brightness 1.04/1.04: "%% FoomaticRIPOptionSetting: STP_Brightness=1.04"
+*STP_Brightness 1.06/1.06: "%% FoomaticRIPOptionSetting: STP_Brightness=1.06"
+*STP_Brightness 1.08/1.08: "%% FoomaticRIPOptionSetting: STP_Brightness=1.08"
+*STP_Brightness 1.10/1.10: "%% FoomaticRIPOptionSetting: STP_Brightness=1.10"
+*STP_Brightness 1.12/1.12: "%% FoomaticRIPOptionSetting: STP_Brightness=1.12"
+*STP_Brightness 1.14/1.14: "%% FoomaticRIPOptionSetting: STP_Brightness=1.14"
+*STP_Brightness 1.16/1.16: "%% FoomaticRIPOptionSetting: STP_Brightness=1.16"
+*STP_Brightness 1.18/1.18: "%% FoomaticRIPOptionSetting: STP_Brightness=1.18"
+*STP_Brightness 1.20/1.20: "%% FoomaticRIPOptionSetting: STP_Brightness=1.20"
+*STP_Brightness 1.22/1.22: "%% FoomaticRIPOptionSetting: STP_Brightness=1.22"
+*STP_Brightness 1.24/1.24: "%% FoomaticRIPOptionSetting: STP_Brightness=1.24"
+*STP_Brightness 1.26/1.26: "%% FoomaticRIPOptionSetting: STP_Brightness=1.26"
+*STP_Brightness 1.28/1.28: "%% FoomaticRIPOptionSetting: STP_Brightness=1.28"
+*STP_Brightness 1.30/1.30: "%% FoomaticRIPOptionSetting: STP_Brightness=1.30"
+*STP_Brightness 1.32/1.32: "%% FoomaticRIPOptionSetting: STP_Brightness=1.32"
+*STP_Brightness 1.34/1.34: "%% FoomaticRIPOptionSetting: STP_Brightness=1.34"
+*STP_Brightness 1.36/1.36: "%% FoomaticRIPOptionSetting: STP_Brightness=1.36"
+*STP_Brightness 1.38/1.38: "%% FoomaticRIPOptionSetting: STP_Brightness=1.38"
+*STP_Brightness 1.40/1.40: "%% FoomaticRIPOptionSetting: STP_Brightness=1.40"
+*STP_Brightness 1.42/1.42: "%% FoomaticRIPOptionSetting: STP_Brightness=1.42"
+*STP_Brightness 1.44/1.44: "%% FoomaticRIPOptionSetting: STP_Brightness=1.44"
+*STP_Brightness 1.46/1.46: "%% FoomaticRIPOptionSetting: STP_Brightness=1.46"
+*STP_Brightness 1.48/1.48: "%% FoomaticRIPOptionSetting: STP_Brightness=1.48"
+*STP_Brightness 1.50/1.50: "%% FoomaticRIPOptionSetting: STP_Brightness=1.50"
+*STP_Brightness 1.52/1.52: "%% FoomaticRIPOptionSetting: STP_Brightness=1.52"
+*STP_Brightness 1.54/1.54: "%% FoomaticRIPOptionSetting: STP_Brightness=1.54"
+*STP_Brightness 1.56/1.56: "%% FoomaticRIPOptionSetting: STP_Brightness=1.56"
+*STP_Brightness 1.58/1.58: "%% FoomaticRIPOptionSetting: STP_Brightness=1.58"
+*STP_Brightness 1.60/1.60: "%% FoomaticRIPOptionSetting: STP_Brightness=1.60"
+*STP_Brightness 1.62/1.62: "%% FoomaticRIPOptionSetting: STP_Brightness=1.62"
+*STP_Brightness 1.64/1.64: "%% FoomaticRIPOptionSetting: STP_Brightness=1.64"
+*STP_Brightness 1.66/1.66: "%% FoomaticRIPOptionSetting: STP_Brightness=1.66"
+*STP_Brightness 1.68/1.68: "%% FoomaticRIPOptionSetting: STP_Brightness=1.68"
+*STP_Brightness 1.70/1.70: "%% FoomaticRIPOptionSetting: STP_Brightness=1.70"
+*STP_Brightness 1.72/1.72: "%% FoomaticRIPOptionSetting: STP_Brightness=1.72"
+*STP_Brightness 1.74/1.74: "%% FoomaticRIPOptionSetting: STP_Brightness=1.74"
+*STP_Brightness 1.76/1.76: "%% FoomaticRIPOptionSetting: STP_Brightness=1.76"
+*STP_Brightness 1.78/1.78: "%% FoomaticRIPOptionSetting: STP_Brightness=1.78"
+*STP_Brightness 1.80/1.80: "%% FoomaticRIPOptionSetting: STP_Brightness=1.80"
+*STP_Brightness 1.82/1.82: "%% FoomaticRIPOptionSetting: STP_Brightness=1.82"
+*STP_Brightness 1.84/1.84: "%% FoomaticRIPOptionSetting: STP_Brightness=1.84"
+*STP_Brightness 1.86/1.86: "%% FoomaticRIPOptionSetting: STP_Brightness=1.86"
+*STP_Brightness 1.88/1.88: "%% FoomaticRIPOptionSetting: STP_Brightness=1.88"
+*STP_Brightness 1.90/1.90: "%% FoomaticRIPOptionSetting: STP_Brightness=1.90"
+*STP_Brightness 1.92/1.92: "%% FoomaticRIPOptionSetting: STP_Brightness=1.92"
+*STP_Brightness 1.94/1.94: "%% FoomaticRIPOptionSetting: STP_Brightness=1.94"
+*STP_Brightness 1.96/1.96: "%% FoomaticRIPOptionSetting: STP_Brightness=1.96"
+*STP_Brightness 1.98/1.98: "%% FoomaticRIPOptionSetting: STP_Brightness=1.98"
+*STP_Brightness 2.00/2.00: "%% FoomaticRIPOptionSetting: STP_Brightness=2.00"
+*CloseUI: *STP_Brightness
+
+*OpenUI *STP_Contrast/Contrast: PickOne
+*FoomaticRIPOption STP_Contrast: float CmdLine B
+*FoomaticRIPOptionPrototype STP_Contrast: "STP_Contrast=%s,"
+*FoomaticRIPOptionRange STP_Contrast: 0 4
+*OrderDependency: 1120 AnySetup *STP_Contrast
+*DefaultSTP_Contrast: 1.00
+*FoomaticRIPDefaultSTP_Contrast: 1.00
+*STP_Contrast 0.00/0.00: "%% FoomaticRIPOptionSetting: STP_Contrast=0.00"
+*STP_Contrast 0.05/0.05: "%% FoomaticRIPOptionSetting: STP_Contrast=0.05"
+*STP_Contrast 0.10/0.10: "%% FoomaticRIPOptionSetting: STP_Contrast=0.10"
+*STP_Contrast 0.15/0.15: "%% FoomaticRIPOptionSetting: STP_Contrast=0.15"
+*STP_Contrast 0.20/0.20: "%% FoomaticRIPOptionSetting: STP_Contrast=0.20"
+*STP_Contrast 0.25/0.25: "%% FoomaticRIPOptionSetting: STP_Contrast=0.25"
+*STP_Contrast 0.30/0.30: "%% FoomaticRIPOptionSetting: STP_Contrast=0.30"
+*STP_Contrast 0.35/0.35: "%% FoomaticRIPOptionSetting: STP_Contrast=0.35"
+*STP_Contrast 0.40/0.40: "%% FoomaticRIPOptionSetting: STP_Contrast=0.40"
+*STP_Contrast 0.45/0.45: "%% FoomaticRIPOptionSetting: STP_Contrast=0.45"
+*STP_Contrast 0.50/0.50: "%% FoomaticRIPOptionSetting: STP_Contrast=0.50"
+*STP_Contrast 0.55/0.55: "%% FoomaticRIPOptionSetting: STP_Contrast=0.55"
+*STP_Contrast 0.60/0.60: "%% FoomaticRIPOptionSetting: STP_Contrast=0.60"
+*STP_Contrast 0.65/0.65: "%% FoomaticRIPOptionSetting: STP_Contrast=0.65"
+*STP_Contrast 0.70/0.70: "%% FoomaticRIPOptionSetting: STP_Contrast=0.70"
+*STP_Contrast 0.75/0.75: "%% FoomaticRIPOptionSetting: STP_Contrast=0.75"
+*STP_Contrast 0.80/0.80: "%% FoomaticRIPOptionSetting: STP_Contrast=0.80"
+*STP_Contrast 0.85/0.85: "%% FoomaticRIPOptionSetting: STP_Contrast=0.85"
+*STP_Contrast 0.90/0.90: "%% FoomaticRIPOptionSetting: STP_Contrast=0.90"
+*STP_Contrast 0.95/0.95: "%% FoomaticRIPOptionSetting: STP_Contrast=0.95"
+*STP_Contrast 1.00/1.00: "%% FoomaticRIPOptionSetting: STP_Contrast=1.00"
+*STP_Contrast 1.05/1.05: "%% FoomaticRIPOptionSetting: STP_Contrast=1.05"
+*STP_Contrast 1.10/1.10: "%% FoomaticRIPOptionSetting: STP_Contrast=1.10"
+*STP_Contrast 1.15/1.15: "%% FoomaticRIPOptionSetting: STP_Contrast=1.15"
+*STP_Contrast 1.20/1.20: "%% FoomaticRIPOptionSetting: STP_Contrast=1.20"
+*STP_Contrast 1.25/1.25: "%% FoomaticRIPOptionSetting: STP_Contrast=1.25"
+*STP_Contrast 1.30/1.30: "%% FoomaticRIPOptionSetting: STP_Contrast=1.30"
+*STP_Contrast 1.35/1.35: "%% FoomaticRIPOptionSetting: STP_Contrast=1.35"
+*STP_Contrast 1.40/1.40: "%% FoomaticRIPOptionSetting: STP_Contrast=1.40"
+*STP_Contrast 1.45/1.45: "%% FoomaticRIPOptionSetting: STP_Contrast=1.45"
+*STP_Contrast 1.50/1.50: "%% FoomaticRIPOptionSetting: STP_Contrast=1.50"
+*STP_Contrast 1.55/1.55: "%% FoomaticRIPOptionSetting: STP_Contrast=1.55"
+*STP_Contrast 1.60/1.60: "%% FoomaticRIPOptionSetting: STP_Contrast=1.60"
+*STP_Contrast 1.65/1.65: "%% FoomaticRIPOptionSetting: STP_Contrast=1.65"
+*STP_Contrast 1.70/1.70: "%% FoomaticRIPOptionSetting: STP_Contrast=1.70"
+*STP_Contrast 1.75/1.75: "%% FoomaticRIPOptionSetting: STP_Contrast=1.75"
+*STP_Contrast 1.80/1.80: "%% FoomaticRIPOptionSetting: STP_Contrast=1.80"
+*STP_Contrast 1.85/1.85: "%% FoomaticRIPOptionSetting: STP_Contrast=1.85"
+*STP_Contrast 1.90/1.90: "%% FoomaticRIPOptionSetting: STP_Contrast=1.90"
+*STP_Contrast 1.95/1.95: "%% FoomaticRIPOptionSetting: STP_Contrast=1.95"
+*STP_Contrast 2.00/2.00: "%% FoomaticRIPOptionSetting: STP_Contrast=2.00"
+*STP_Contrast 2.05/2.05: "%% FoomaticRIPOptionSetting: STP_Contrast=2.05"
+*STP_Contrast 2.10/2.10: "%% FoomaticRIPOptionSetting: STP_Contrast=2.10"
+*STP_Contrast 2.15/2.15: "%% FoomaticRIPOptionSetting: STP_Contrast=2.15"
+*STP_Contrast 2.20/2.20: "%% FoomaticRIPOptionSetting: STP_Contrast=2.20"
+*STP_Contrast 2.25/2.25: "%% FoomaticRIPOptionSetting: STP_Contrast=2.25"
+*STP_Contrast 2.30/2.30: "%% FoomaticRIPOptionSetting: STP_Contrast=2.30"
+*STP_Contrast 2.35/2.35: "%% FoomaticRIPOptionSetting: STP_Contrast=2.35"
+*STP_Contrast 2.40/2.40: "%% FoomaticRIPOptionSetting: STP_Contrast=2.40"
+*STP_Contrast 2.45/2.45: "%% FoomaticRIPOptionSetting: STP_Contrast=2.45"
+*STP_Contrast 2.50/2.50: "%% FoomaticRIPOptionSetting: STP_Contrast=2.50"
+*STP_Contrast 2.55/2.55: "%% FoomaticRIPOptionSetting: STP_Contrast=2.55"
+*STP_Contrast 2.60/2.60: "%% FoomaticRIPOptionSetting: STP_Contrast=2.60"
+*STP_Contrast 2.65/2.65: "%% FoomaticRIPOptionSetting: STP_Contrast=2.65"
+*STP_Contrast 2.70/2.70: "%% FoomaticRIPOptionSetting: STP_Contrast=2.70"
+*STP_Contrast 2.75/2.75: "%% FoomaticRIPOptionSetting: STP_Contrast=2.75"
+*STP_Contrast 2.80/2.80: "%% FoomaticRIPOptionSetting: STP_Contrast=2.80"
+*STP_Contrast 2.85/2.85: "%% FoomaticRIPOptionSetting: STP_Contrast=2.85"
+*STP_Contrast 2.90/2.90: "%% FoomaticRIPOptionSetting: STP_Contrast=2.90"
+*STP_Contrast 2.95/2.95: "%% FoomaticRIPOptionSetting: STP_Contrast=2.95"
+*STP_Contrast 3.00/3.00: "%% FoomaticRIPOptionSetting: STP_Contrast=3.00"
+*STP_Contrast 3.05/3.05: "%% FoomaticRIPOptionSetting: STP_Contrast=3.05"
+*STP_Contrast 3.10/3.10: "%% FoomaticRIPOptionSetting: STP_Contrast=3.10"
+*STP_Contrast 3.15/3.15: "%% FoomaticRIPOptionSetting: STP_Contrast=3.15"
+*STP_Contrast 3.20/3.20: "%% FoomaticRIPOptionSetting: STP_Contrast=3.20"
+*STP_Contrast 3.25/3.25: "%% FoomaticRIPOptionSetting: STP_Contrast=3.25"
+*STP_Contrast 3.30/3.30: "%% FoomaticRIPOptionSetting: STP_Contrast=3.30"
+*STP_Contrast 3.35/3.35: "%% FoomaticRIPOptionSetting: STP_Contrast=3.35"
+*STP_Contrast 3.40/3.40: "%% FoomaticRIPOptionSetting: STP_Contrast=3.40"
+*STP_Contrast 3.45/3.45: "%% FoomaticRIPOptionSetting: STP_Contrast=3.45"
+*STP_Contrast 3.50/3.50: "%% FoomaticRIPOptionSetting: STP_Contrast=3.50"
+*STP_Contrast 3.55/3.55: "%% FoomaticRIPOptionSetting: STP_Contrast=3.55"
+*STP_Contrast 3.60/3.60: "%% FoomaticRIPOptionSetting: STP_Contrast=3.60"
+*STP_Contrast 3.65/3.65: "%% FoomaticRIPOptionSetting: STP_Contrast=3.65"
+*STP_Contrast 3.70/3.70: "%% FoomaticRIPOptionSetting: STP_Contrast=3.70"
+*STP_Contrast 3.75/3.75: "%% FoomaticRIPOptionSetting: STP_Contrast=3.75"
+*STP_Contrast 3.80/3.80: "%% FoomaticRIPOptionSetting: STP_Contrast=3.80"
+*STP_Contrast 3.85/3.85: "%% FoomaticRIPOptionSetting: STP_Contrast=3.85"
+*STP_Contrast 3.90/3.90: "%% FoomaticRIPOptionSetting: STP_Contrast=3.90"
+*STP_Contrast 3.95/3.95: "%% FoomaticRIPOptionSetting: STP_Contrast=3.95"
+*STP_Contrast 4.00/4.00: "%% FoomaticRIPOptionSetting: STP_Contrast=4.00"
+*CloseUI: *STP_Contrast
+
+*CloseGroup: GutenprintOutputControlCommon
+
+*OpenGroup: GutenprintPrinterFeaturesCommon/Gutenprint Printer Features Common
+
+*OpenUI *STP_Duplex/Double-Sided Printing: PickOne
+*FoomaticRIPOption STP_Duplex: enum CmdLine B
+*OrderDependency: 1020 AnySetup *STP_Duplex
+*DefaultSTP_Duplex: None
+*STP_Duplex DuplexNoTumble/Long Edge (Standard): "%% FoomaticRIPOptionSetting: STP_Duplex=DuplexNoTumble"
+*FoomaticRIPOptionSetting STP_Duplex=DuplexNoTumble: "STP_Duplex=Duple&&
+xNoTumble,"
+*End
+*STP_Duplex DuplexTumble/Short Edge (Flip): "%% FoomaticRIPOptionSetting: STP_Duplex=DuplexTumble"
+*FoomaticRIPOptionSetting STP_Duplex=DuplexTumble: "STP_Duplex=DuplexT&&
+umble,"
+*End
+*STP_Duplex None/Off: "%% FoomaticRIPOptionSetting: STP_Duplex=None"
+*FoomaticRIPOptionSetting STP_Duplex=None: "STP_Duplex=None,"
+*CloseUI: *STP_Duplex
+
+*FoomaticRIPOption Model: enum CmdLine A 100
+*FoomaticRIPOptionSetting Model=pcl-g_6: " -sDeviceManufacturer=Generi&&
+c -sDeviceModel=pcl-g_6"
+*End
+
+*CloseGroup: GutenprintPrinterFeaturesCommon
+
+*OpenGroup: PrintoutMode/Printout Mode
+
+*OpenUI *STP_ImageType/Image Type: PickOne
+*FoomaticRIPOption STP_ImageType: enum CmdLine B
+*OrderDependency: 1040 AnySetup *STP_ImageType
+*DefaultSTP_ImageType: FromPrintoutMode
+*STP_ImageType FromPrintoutMode/Controlled by 'Printout Mode': "%% FoomaticRIPOptionSetting: STP_ImageType=@PrintoutMode"
+*STP_ImageType Photo/Photograph: "%% FoomaticRIPOptionSetting: STP_ImageType=Photo"
+*FoomaticRIPOptionSetting STP_ImageType=Photo: "STP_ImageType=Photo,"
+*STP_ImageType Graphics/Graphics: "%% FoomaticRIPOptionSetting: STP_ImageType=Graphics"
+*FoomaticRIPOptionSetting STP_ImageType=Graphics: "STP_ImageType=Graph&&
+ics,"
+*End
+*STP_ImageType LineArt/Line Art: "%% FoomaticRIPOptionSetting: STP_ImageType=LineArt"
+*FoomaticRIPOptionSetting STP_ImageType=LineArt: "STP_ImageType=LineAr&&
+t,"
+*End
+*STP_ImageType None/Manual Control: "%% FoomaticRIPOptionSetting: STP_ImageType=None"
+*FoomaticRIPOptionSetting STP_ImageType=None: "STP_ImageType=None,"
+*STP_ImageType Text/Text: "%% FoomaticRIPOptionSetting: STP_ImageType=Text"
+*FoomaticRIPOptionSetting STP_ImageType=Text: "STP_ImageType=Text,"
+*STP_ImageType TextGraphics/Mixed Text and Graphics: "%% FoomaticRIPOptionSetting: STP_ImageType=TextGraphics"
+*FoomaticRIPOptionSetting STP_ImageType=TextGraphics: "STP_ImageType=T&&
+extGraphics,"
+*End
+*CloseUI: *STP_ImageType
+
+*OpenUI *STP_Resolution/Resolution: PickOne
+*FoomaticRIPOption STP_Resolution: enum CmdLine B
+*OrderDependency: 1090 AnySetup *STP_Resolution
+*DefaultSTP_Resolution: FromPrintoutMode
+*STP_Resolution FromPrintoutMode/Controlled by 'Printout Mode': "%% FoomaticRIPOptionSetting: STP_Resolution=@PrintoutMode"
+*STP_Resolution 150dpi/150x150 DPI: "%% FoomaticRIPOptionSetting: STP_Resolution=150dpi"
+*FoomaticRIPOptionSetting STP_Resolution=150dpi: "STP_Resolution=150dp&&
+i,"
+*End
+*STP_Resolution 300dpi/300x300 DPI: "%% FoomaticRIPOptionSetting: STP_Resolution=300dpi"
+*FoomaticRIPOptionSetting STP_Resolution=300dpi: "STP_Resolution=300dp&&
+i,"
+*End
+*STP_Resolution 600dpi/600x600 DPI: "%% FoomaticRIPOptionSetting: STP_Resolution=600dpi"
+*FoomaticRIPOptionSetting STP_Resolution=600dpi: "STP_Resolution=600dp&&
+i,"
+*End
+*CloseUI: *STP_Resolution
+
+*OpenUI *Resolution/Rendering Resolution: PickOne
+*FoomaticRIPOption Resolution: enum CmdLine A
+*OrderDependency: 120 AnySetup *Resolution
+*DefaultResolution: FromPrintoutMode
+*Resolution FromPrintoutMode/Controlled by 'Printout Mode': "%% FoomaticRIPOptionSetting: Resolution=@PrintoutMode"
+*Resolution 150x150dpi/150 x 150 dpi: "%% FoomaticRIPOptionSetting: Resolution=150x150dpi"
+*FoomaticRIPOptionSetting Resolution=150x150dpi: " -r150x150"
+*Resolution 300x300dpi/300 x 300 dpi: "%% FoomaticRIPOptionSetting: Resolution=300x300dpi"
+*FoomaticRIPOptionSetting Resolution=300x300dpi: " -r300x300"
+*Resolution 600x600dpi/600 x 600 dpi: "%% FoomaticRIPOptionSetting: Resolution=600x600dpi"
+*FoomaticRIPOptionSetting Resolution=600x600dpi: " -r600x600"
+*CloseUI: *Resolution
+
+*OpenUI *OutputType/Output Type: PickOne
+*FoomaticRIPOption OutputType: enum CmdLine A
+*OrderDependency: 130 AnySetup *OutputType
+*DefaultOutputType: FromPrintoutMode
+*OutputType FromPrintoutMode/Controlled by 'Printout Mode': "%% FoomaticRIPOptionSetting: OutputType=@PrintoutMode"
+*OutputType BlackAndWhite/Black and White: "%% FoomaticRIPOptionSetting: OutputType=BlackAndWhite"
+*FoomaticRIPOptionSetting OutputType=BlackAndWhite: " -sProcessColorMo&&
+del=DeviceGray -dBitsPerSample=1"
+*End
+*OutputType Grayscale/Gray Scale: "%% FoomaticRIPOptionSetting: OutputType=Grayscale"
+*FoomaticRIPOptionSetting OutputType=Grayscale: " -sProcessColorModel=&&
+DeviceGray"
+*End
+*CloseUI: *OutputType
+
+*CloseGroup: PrintoutMode
+
+
+*% Generic boilerplate PPD stuff as standard PostScript fonts and so on
+
+*DefaultFont: Courier
+*Font AvantGarde-Book: Standard "(001.006S)" Standard ROM
+*Font AvantGarde-BookOblique: Standard "(001.006S)" Standard ROM
+*Font AvantGarde-Demi: Standard "(001.007S)" Standard ROM
+*Font AvantGarde-DemiOblique: Standard "(001.007S)" Standard ROM
+*Font Bookman-Demi: Standard "(001.004S)" Standard ROM
+*Font Bookman-DemiItalic: Standard "(001.004S)" Standard ROM
+*Font Bookman-Light: Standard "(001.004S)" Standard ROM
+*Font Bookman-LightItalic: Standard "(001.004S)" Standard ROM
+*Font Courier: Standard "(002.004S)" Standard ROM
+*Font Courier-Bold: Standard "(002.004S)" Standard ROM
+*Font Courier-BoldOblique: Standard "(002.004S)" Standard ROM
+*Font Courier-Oblique: Standard "(002.004S)" Standard ROM
+*Font Helvetica: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Bold: Standard "(001.007S)" Standard ROM
+*Font Helvetica-BoldOblique: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Narrow-Bold: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow-BoldOblique: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow-Oblique: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Oblique: Standard "(001.006S)" Standard ROM
+*Font NewCenturySchlbk-Bold: Standard "(001.009S)" Standard ROM
+*Font NewCenturySchlbk-BoldItalic: Standard "(001.007S)" Standard ROM
+*Font NewCenturySchlbk-Italic: Standard "(001.006S)" Standard ROM
+*Font NewCenturySchlbk-Roman: Standard "(001.007S)" Standard ROM
+*Font Palatino-Bold: Standard "(001.005S)" Standard ROM
+*Font Palatino-BoldItalic: Standard "(001.005S)" Standard ROM
+*Font Palatino-Italic: Standard "(001.005S)" Standard ROM
+*Font Palatino-Roman: Standard "(001.005S)" Standard ROM
+*Font Symbol: Special "(001.007S)" Special ROM
+*Font Times-Bold: Standard "(001.007S)" Standard ROM
+*Font Times-BoldItalic: Standard "(001.009S)" Standard ROM
+*Font Times-Italic: Standard "(001.007S)" Standard ROM
+*Font Times-Roman: Standard "(001.007S)" Standard ROM
+*Font ZapfChancery-MediumItalic: Standard "(001.007S)" Standard ROM
+*Font ZapfDingbats: Special "(001.004S)" Standard ROM
+

@@ -1,0 +1,5 @@
+#!/bin/sh
+D=`date +%Y%m%d%H%M%S`
+./merge_temps tempref /var/sensors/20* > tempref.new
+mv tempref tempref.$D
+mv tempref.new tempref

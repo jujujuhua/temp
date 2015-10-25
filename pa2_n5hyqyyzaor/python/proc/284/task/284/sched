@@ -1,0 +1,21 @@
+xfs-data/sda2 (284, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :          2277.732093
+se.vruntime                                  :          1181.508249
+se.sum_exec_runtime                          :             0.015241
+nr_switches                                  :                    2
+nr_voluntary_switches                        :                    2
+nr_involuntary_switches                      :                    0
+se.load.weight                               :                88761
+se.avg.runnable_avg_sum                      :                11733
+se.avg.running_avg_sum                       :                11731
+se.avg.avg_period                            :                11748
+se.avg.load_avg_contrib                      :                 1023
+se.avg.utilization_avg_contrib               :                 1023
+se.avg.decay_count                           :                 2173
+policy                                       :                    0
+prio                                         :                  100
+clock-delta                                  :                  160
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

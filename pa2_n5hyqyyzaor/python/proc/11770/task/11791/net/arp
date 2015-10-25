@@ -1,0 +1,4 @@
+IP address       HW type     Flags       HW address            Mask     Device
+141.212.113.5    0x1         0x2         00:25:90:23:60:86     *        enp4s0
+141.212.113.1    0x1         0x2         f8:66:f2:28:fd:3f     *        enp4s0
+141.212.113.4    0x1         0x2         2c:41:38:89:09:b5     *        enp4s0

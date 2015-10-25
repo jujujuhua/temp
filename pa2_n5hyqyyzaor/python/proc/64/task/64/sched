@@ -1,0 +1,21 @@
+scsi_eh_5 (64, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :           745.268433
+se.vruntime                                  :           140.139387
+se.sum_exec_runtime                          :             0.050144
+nr_switches                                  :                    3
+nr_voluntary_switches                        :                    3
+nr_involuntary_switches                      :                    0
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                11785
+se.avg.running_avg_sum                       :                11765
+se.avg.avg_period                            :                12123
+se.avg.load_avg_contrib                      :                 1023
+se.avg.utilization_avg_contrib               :                 1023
+se.avg.decay_count                           :                  711
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  155
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

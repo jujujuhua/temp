@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+  <div>
+  	{% if err == 0 %}
+  		<script>
+  			alert("Username does not exist!")
+  		</script>
+  	{%endif %}
+  	{% if err == 1 %}
+  		<script>
+  			alert("Invalid Username and Password combination!")
+  		</script>
+  	{%endif %}
+  	{% if err == 2 %}
+  		<script>
+  			alert("Malformed Username or password !")
+  		</script>
+  	{%endif %}
+  </div>
+
+  <h1>Login</h1>
+  <form  method = "POST" action = "/n5hyqyyzaor/pa2/login">
+  Username:<br>
+  <input type="text" name="username" pattern="^[A-Za-z0-9_]+$">
+  <input type="hidden" name="id" value="{{album_id}}">
+  <br>
+  Password:<br>
+  <input type="password" name="password" pattern="^[a-zA-Z0-9_]*[a-zA-Z]+[a-zA-Z0-9_]*[0-9]+[a-zA-Z0-9_]*$||^[a-zA-Z0-9_]*[0-9]+[a-zA-Z0-9_]*[a-zA-Z]+[a-zA-Z0-9_]*$">
+  <br><br>
+  
+
+  <input type="submit"  value="Login"/>
+</form>
+
+  <form method= 'GET' action = "{{url_for('main.forgetpwd')}}">
+    
+    <input type="submit"  value="Forgotten the password"/>
+
+  </form>
+
+{% endblock %}

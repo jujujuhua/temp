@@ -1,0 +1,22 @@
+mysqld (11788, #threads: 79)
+-------------------------------------------------------------------
+se.exec_start                                :    1607940281.195232
+se.vruntime                                  :      18082178.895854
+se.sum_exec_runtime                          :         18814.402480
+nr_switches                                  :               916870
+nr_voluntary_switches                        :               901785
+nr_involuntary_switches                      :                15085
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                  181
+se.avg.running_avg_sum                       :                   29
+se.avg.avg_period                            :                48753
+se.avg.load_avg_contrib                      :                    0
+se.avg.utilization_avg_contrib               :                    0
+se.avg.decay_count                           :           1533451349
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  150
+mm->numa_scan_seq                            :                    0
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 align="center">Albums</h1>
+    <table style="width:100%">
+    {% for album in album_list %}
+    <tr>
+      <td> {{album[1]}} </td>
+      {% if edit %}
+      <td><form method="post" action="/n5hyqyyzaor/pa2/album/edit">
+	<input type="hidden" name="op" value="edit" />
+	<input type="submit" name="submit" value="Edit"/>
+      </form></td>
+
+      <td><form method="post" action="/n5hyqyyzaor/pa1/albums/edit}">
+	  <input type="hidden" name="op" value="delete"/>
+	  <input type="hidden" name="albumid" value="{{album[0]}}"/>
+	  <input type="submit" name="submit" value="Delete"/>
+      </form></td>
+      {% else %}
+      <td><form method="get" action="/n5hyqyyzaor/pa1/album?id={{album[0]}}">
+	  <input type="hidden" name="id" value="{{album[0]}}" />
+	  <input type="submit" value="View"/>
+	        </form></td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+   
+    {% if edit %}
+    <tr>
+    <form method="post" action="/n5hyqyyzaor/pa1/albums/edit">
+      <td><input type="text" name="title" value="NEW______"/></td>
+      <input type="hidden" name="op" value="add"/>
+      <input type="hidden" name="username" value="{{user}}"/>
+      <td><input type="submit" name="submit" value="Add"/></td>
+    </form></tr>
+    {% endif %}
+    {% if edit %}
+    <form method="get" action="/n5hyqyyzaor/pa1/albums">
+      <input type="hidden" name="username" value="{{user}}"/>
+      <td><input type="submit" value="Done"/></td>
+    </form>
+    {% else %}
+    <form method="get" action="/n5hyqyyzaor/pa1/albums/edit">
+      <input type="hidden" name="username" value="{{user}}"/>
+      <td><input type="submit" value="Edit"/></td>
+          </form>
+    {% endif %}
+    </table>
+{% endblock %}

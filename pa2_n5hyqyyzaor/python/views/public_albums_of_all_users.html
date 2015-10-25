@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 align="center">Public Albums</h1>
+    <table style="width:100%">
+    {% for album in album_list %}
+    <tr>
+      <td> {{album[1]}} </td>
+      
+      <td><form method="get" action="/n5hyqyyzaor/pa2/album?id={{album[0]}}">
+	  <input type="hidden" name="id" value="{{album[0]}}" />
+	  <input type="submit" value="View"/>
+	        </form></td>
+      
+    </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

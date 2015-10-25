@@ -1,0 +1,27 @@
+#!/bin/tcsh                                                                                                                
+set MYADDR=`ifconfig -a | egrep -i "inet addr:141" | awk -F: '{print $2}' | awk '{print $1}'`
+set BCASTADDR=`ifconfig -a | egrep -i "Bcast:141" | awk -F: '{print $3}' | awk '{print $1}'`
+
+# allow loopback                                                                                                          
+
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A OUTPUT -o lo -j ACCEPT
+
+# ALLOW OUTBOUND TCP: accept replies to connections we initiate                                                            
+iptables -A INPUT -p tcp -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# SPOOFING: Disallow incoming packets that claim to be from us.                                                            
+iptables -A INPUT -p all -s $MYADDR -i eth0 -j DROP
+iptables -A INPUT -p all -s $MYADDR -i eth1 -j DROP
+
+# ICMP so that others can ping us, but disallow broadcast pings to avoid SMURF                                             
+iptables -A INPUT -p icmp -s $BCASTADDR -j DROP
+iptables -A INPUT -p icmp -j ACCEPT
+
+# ALLOW subnet in EECS (NFS and VPN)                                                                                       
+iptables -A INPUT -s 141.213.0.0/16  -j ACCEPT
+iptables -A INPUT -s 141.212.0.0/16  -j ACCEPT
+iptables -A INPUT -s 141.211.0.0/16  -j ACCEPT
+
+# ALLOW VLSI 10 net                                                                                                        
+iptables -A INPUT -s 10.161.2.0/24  -j ACCEPT

@@ -1,0 +1,3 @@
+iptables -A INPUT -p all -j LOG --log-level=INFO --log-prefix="Dropped INPUT packets: "
+iptables -A INPUT -p all -j DROP
+

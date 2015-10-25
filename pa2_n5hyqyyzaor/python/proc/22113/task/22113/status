@@ -1,0 +1,46 @@
+Name:	systemd
+State:	S (sleeping)
+Tgid:	22113
+Ngid:	0
+Pid:	22113
+PPid:	1
+TracerPid:	0
+Uid:	992382	992382	992382	992382
+Gid:	2067	2067	2067	2067
+FDSize:	64
+Groups:	2018 2067 
+NStgid:	22113
+NSpid:	22113
+NSpgid:	22113
+NSsid:	22113
+VmPeak:	   45000 kB
+VmSize:	   44996 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    4624 kB
+VmRSS:	    4220 kB
+VmData:	     420 kB
+VmStk:	     136 kB
+VmExe:	    1320 kB
+VmLib:	    3896 kB
+VmPTE:	     108 kB
+VmPMD:	      12 kB
+VmSwap:	     372 kB
+Threads:	1
+SigQ:	0/7921
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	7be3c0fe28014a03
+SigIgn:	0000000000001000
+SigCgt:	0000000180000000
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000003fffffffff
+Seccomp:	0
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	601
+nonvoluntary_ctxt_switches:	22

@@ -1,0 +1,22 @@
+polkitd (700, #threads: 6)
+-------------------------------------------------------------------
+se.exec_start                                :    1607830763.829412
+se.vruntime                                  :      18082166.423755
+se.sum_exec_runtime                          :          1405.751848
+nr_switches                                  :                14345
+nr_voluntary_switches                        :                12827
+nr_involuntary_switches                      :                 1518
+se.load.weight                               :                 1024
+se.avg.runnable_avg_sum                      :                 2161
+se.avg.running_avg_sum                       :                  732
+se.avg.avg_period                            :                47489
+se.avg.load_avg_contrib                      :                   45
+se.avg.utilization_avg_contrib               :                   15
+se.avg.decay_count                           :           1533346905
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                  156
+mm->numa_scan_seq                            :                    0
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

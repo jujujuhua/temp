@@ -1,0 +1,4 @@
+# DNS replies                                                                                                              
+iptables -A INPUT -p udp --sport 53 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p tcp --sport 53 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+

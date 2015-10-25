@@ -1,0 +1,67 @@
+#!/usr/bin/python
+import os,re,sys,time
+
+warn = 2  # Warn at 2 degrees C over reference temp
+crit = 5  # Critical at 5 degrees C over reference temp
+
+logprefix = '/var/sensors/'
+sensorcmd = '/usr/bin/sensors'
+reffile = '/etc/nagios/tempref'
+
+degree = '\302\260'  # degree symbol (superscript circle)
+degreepat = '\302?\260'  # degree symbol (superscript circle)
+statuses = ['OK', 'WARN', 'CRITICAL']
+
+# Make a file name based on the time
+x = time.localtime()
+timestamp = '%s%04d%02d%02d%02d%02d%02d' % (logprefix, x.tm_year, x.tm_mon, x.tm_mday, x.tm_hour, x.tm_min, x.tm_sec)
+
+# Get the reference report, for the thresholds
+try:
+  reftemps = [float(t) for t in file(reffile).readlines()]
+except:
+  print('CRITICAL failure reading reference values')
+  sys.exit(2)
+
+# Get a report from the sensors
+try:
+  xsensorreport = os.popen('/usr/bin/sensors').read()
+  # Repair an output inconsistency for latest Ubuntu "sensors" command
+  sensorreport = re.sub('([-+][.\d]+) C', '\\1' + degree + 'C', xsensorreport)
+  curtemps = [float(t) for t in re.findall('([-+]?[.\d]+)' + degreepat, sensorreport)]
+except:
+  print('CRITICAL failure reading sensors')
+  sys.exit(2)
+
+# Write out the report, for future analysis
+try:
+  file(timestamp, 'w').write(sensorreport)
+except:
+  print('CRITICAL failure writing log')
+  sys.exit(2)
+
+nrefs = len(reftemps)
+ncurs = len(curtemps)
+if ncurs != nrefs:
+  print('CRITICAL number of temperatures sensed changed from %d to %d' % (nrefs, ncurs))
+  sys.exit(2)
+
+s = ''
+status = 0
+for z in zip(curtemps, reftemps):
+  d = z[0] - z[1]
+  if d >= crit:
+    fmt = ' <%.1f>'
+    status |= 3
+  elif d >= warn:
+    fmt = ' [%.1f]'
+    status |= 1
+  else:
+    fmt = ' %.1f'
+  s += fmt % z[0]
+
+# Print status message and exit with the appropriate return code
+status = min(2,status)
+print statuses[status] + s
+sys.exit(status)
+

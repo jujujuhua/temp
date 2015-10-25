@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Home Page</h1>
+   
+
+
+  <h1>Login</h1>
+  <form  method = "POST" action = "{{url_for('main.login')}}">
+     <input type="hidden" name="url" value="{{url_for('main.index')}}"/>
+  Username:<br>
+  <input type="text" name="username">
+  <br>
+  Password:<br>
+  <input type="password" name="password">
+    <br>
+    
+  <input type="submit"  value="Login"/>
+
+
+</form>
+
+  <form method= 'GET' action = "{{url_for('main.forgetpwd')}}">
+    
+    <input type="submit"  value="Forgotten the password"/>
+    
+
+  </form>
+  <br>
+<a href = "{{url_for('main.new_user_page')}}">Register </a>
+  
+    <br>
+    <br>
+  <table style="width:100%">
+  <tr> <td><b>Public Albums: </b></td></tr>
+    {% for album in album_list %}
+    <tr>
+      <td> {{album[1]}} </td>
+      
+      <td><form method="get" action="/n5hyqyyzaor/pa2/album?id={{album[0]}}">
+    <input type="hidden" name="id" value="{{album[0]}}" />
+    <input type="submit" value="View"/>
+          </form></td>
+      
+    </tr>
+    {% endfor %}
+    </table>
+
+<br>
+{% endblock %}

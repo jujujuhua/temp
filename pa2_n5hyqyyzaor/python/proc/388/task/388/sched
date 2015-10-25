@@ -1,0 +1,21 @@
+rpciod (388, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :          6030.485631
+se.vruntime                                  :          1578.698204
+se.sum_exec_runtime                          :             0.009369
+nr_switches                                  :                    2
+nr_voluntary_switches                        :                    2
+nr_involuntary_switches                      :                    0
+se.load.weight                               :                88761
+se.avg.runnable_avg_sum                      :                 6102
+se.avg.running_avg_sum                       :                 5740
+se.avg.avg_period                            :                 6108
+se.avg.load_avg_contrib                      :                 1022
+se.avg.utilization_avg_contrib               :                  962
+se.avg.decay_count                           :                 5752
+policy                                       :                    0
+prio                                         :                  100
+clock-delta                                  :                  155
+numa_migrations, 0
+numa_faults_memory, 0, 0, 1, 0, -1
+numa_faults_memory, 1, 0, 0, 0, -1

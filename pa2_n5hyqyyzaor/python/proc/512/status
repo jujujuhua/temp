@@ -1,0 +1,46 @@
+Name:	mcelog
+State:	S (sleeping)
+Tgid:	512
+Ngid:	0
+Pid:	512
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	64
+Groups:	
+NStgid:	512
+NSpid:	512
+NSpgid:	512
+NSsid:	512
+VmPeak:	    6572 kB
+VmSize:	    6500 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    1892 kB
+VmRSS:	    1680 kB
+VmData:	     188 kB
+VmStk:	     136 kB
+VmExe:	      92 kB
+VmLib:	    1936 kB
+VmPTE:	      36 kB
+VmPMD:	      12 kB
+VmSwap:	     116 kB
+Threads:	1
+SigQ:	1/7921
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	0000000000014206
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+Seccomp:	0
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	1
+nonvoluntary_ctxt_switches:	0
